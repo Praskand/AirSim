@@ -1,6 +1,7 @@
 <!DOCTYPE html> <html><head><meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>.alert {padding: 20px;
+  <style>:root {color-scheme: light dark;} /* light or dark */
+    .alert {padding: 20px;
   background-color: #f44336;
   color: white;
   opacity: 1;
@@ -36,9 +37,9 @@
   <span class="closebtn">&times;</span>  
   <strong>Warning!</strong> Indicates a warning that might need attention.</div>
 
-<script> s = screen;
-  if(Math.min(s.width, s.height) <=480){location.replace('https://drive.google.com/viewerng/viewer?embedded=true&url='+
-    'https://anuragpaul0.github.io/LT-Codes/Anurag%20Paul%2020EC01045%20ppt.pdf');}
+<script> s = screen; l = location; u = 'https://anuragpaul0.github.io/LT-Codes/Anurag%20Paul%2020EC01045%20ppt.pdf';
+  if(Math.min(s.width, s.height) <=480){l.replace('https://drive.google.com/viewerng/viewer?embedded=true&url='+u);}
+  else{l.replace(u);}
   var close = document.getElementsByClassName("closebtn");
 var i;
 
