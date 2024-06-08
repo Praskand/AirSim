@@ -1,14 +1,37 @@
 <!DOCTYPE html> <html><head><meta name="viewport" content="width=device-width, initial-scale=1">
   <style>:root {color-scheme: light dark;} /* light or dark */
-  .closebtn:hover {color: black;} </style></head>
+  
+table {
+  counter-reset: rowNumber;
+}
+
+table tr::before {
+  display: table-cell;
+  counter-increment: rowNumber;
+  content: counter(rowNumber) ".";
+  padding-right: 0.3em;
+  text-align: right;
+}</style></head>
 
   <body> <p style='word-wrap: break-word;'> <a></a> <br><br>
     <a></a> </p> <ol>
   <li>NIT Trichy - Communication System</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ol>
-
+  <li>NIT surathkal - Signal Processing and Machine Learning</li>
+  <li>Milk </li> </ol>
+    
+    <table cellpadding="0"> <tr><th>NIT</th> <th>PG Program</th></tr>
+      <tr><td>Trichy</td> <td>Communication System</td></tr>
+      <tr><td>surathkal</td> <td>Signal Processing and Machine Learning</td></tr>
+      <tr><td>Rourkela</td> <td>Signal & Image Processing</td></tr>
+      <tr><td>green</td></tr>
+      <tr><td>purple</td></tr>
+      <tr><td>orange</td></tr>
+      <tr><td>maroon</td></tr>
+      <tr><td>mauve</td></tr>
+      <tr><td>lavender</td></tr>
+      <tr><td>pink</td></tr>
+      <tr><td>brown</td></tr> </table>
+    
 <script> s = screen, m = 'https://Praskand.github.io/AirSim/', d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
   // l = location, u = 'https://anuragpaul0.github.io/LT-Codes/Anurag%20Paul%2020EC01045%20ppt.pdf';
   a = document.getElementsByTagName('a'), l = a.length, p = ['AvailableChoicesN.pdf', 'N.pdf'];
