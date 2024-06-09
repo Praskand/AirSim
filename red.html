@@ -1,8 +1,8 @@
 <!DOCTYPE html> <html><head><meta name="viewport" content="width=device-width, initial-scale=1">
   <style>:root {color-scheme: light dark; --color: #333;} /* light or dark */
-    td {text-align: center;}
-    table {border-spacing: 3px 0 transparent;
-    /* counter-reset: rowNumber; 
+    td {text-align: center; padding: 1px 2px}
+    table {border-spacing: 0;
+    /* 3px counter-reset: rowNumber; 
       cell-
       padding:0;*/
     }
@@ -12,7 +12,7 @@
   counter-increment: rowNumber;
   content: counter(rowNumber) ".";
   padding-right: 0.3em;
-  text-align: right;
+  text-align: right;  cell-padding='0'
 } */
 </style></head>
 
@@ -22,7 +22,7 @@
   <li>NIT surathkal - Signal Processing and Machine Learning</li>
   <li>Milk </li> </ol>
     
-    <table cell-padding='0'> <tr style="background-color:#090"><th></th> <th colspan='2'></th>
+    <table> <tr style="background-color:#090"><th></th> <th colspan='2'></th>
         <th colspan='2'>2023</th> <th colspan='2'>2021</th></tr>
       <tr style="background-color:#050"><th></th> <th>NIT</th> <th>PG Program</th> <th>Min GATE Score
         </th> <th>Round</th> <th>Min GATE Score</th> <th>Round</th> </tr>
