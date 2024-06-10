@@ -19,24 +19,39 @@
 } */
 </style></head>
 
-  <body>
-    <table> <tr style="background-color:#090"><th></th> <th colspan='2'></th>
+  <body> <table> <tr style="background-color:#090"><th></th> <th colspan='2'></th>
         <th colspan='2'>2023</th> <th colspan='2'>2021</th></tr>
       <tr style="background-color:#050"><th></th> <th>NIT</th> <th>PG Program</th> <th>Min GATE Score
         </th> <th>Round</th> <th>Min GATE Score</th> <th>Round</th> </tr>
 
-      <tr style="background-color:var(--color)"><th>1</th> <td>Trichy</td> <td>Communication System</td>
-        <td>343</td> <td>Special Round 1</td> <td>398</td> <td>Round 3</td></tr>
-      <tr style="background-color:#222"><th>2</th> <td>surathkal</td>
-        <td>Signal Processing and Machine Learning</td> <td>333</td> <td>Special Round 1</td> <td>440</td>
-        <td>Round 3</td></tr>
-      <tr style="background-color:var(--color)"><th>3</th> <td>Warangal</td>
+      <tr style="background-color:var(--color)">
+        <!-- <th>1</th> -->
+        <td>Warangal</td>
         <td>Electronic Instrumentation and Embedded Systems</td> <td>335</td> <td>Round 2</td>
         <td>373</td> <td>Round 3</td></tr>
+        <!-- Trichy</td> <td>Communication System</td>
+        <td>343</td> <td>Special Round 1</td> <td>398</td> <td>Round 3</td></tr> -->
+      <tr style="background-color:#222">
+        <!-- <th>2</th> -->
+        <td>Trichy</td> <td>Communication System</td>
+        <td>343</td> <td>Special Round 1</td> <td>398</td> <td>Round 3</td></tr>
+        <!-- surathkal</td>
+        <td>Signal Processing and Machine Learning</td> <td>333</td> <td>Special Round 1</td> <td>440</td>
+        <td>Round 3</td></tr> -->
+      <tr style="background-color:var(--color)">
+        <!-- <th>3</th> -->
+        <td>surathkal</td>
+        <td>Signal Processing and Machine Learning</td> <td>333</td> <td>Special Round 1</td> <td>440</td>
+        <td>Round 3</td></tr>
+        <!-- Warangal</td>
+        <td>Electronic Instrumentation and Embedded Systems</td> <td>335</td> <td>Round 2</td>
+        <td>373</td> <td>Round 3</td></tr> -->
         <!-- Rourkela</td>
       <td>Signal & Image Processing</td> <td>279</td> <td>Round 1</td> <td>274</td> <td>Round 2</td>
         </tr> -->
-      <tr style="background-color:#222"><th>4</th> <td>Rourkela</td>
+      <tr style="background-color:#222">
+        <!-- <th>4</th> -->
+        <td>Rourkela</td>
         <td>Signal & Image Processing</td> <td>279</td> <td>Round 1</td> <td>274</td> <td>Round 2</td>
           </tr>
           <!-- Warangal</td>
@@ -57,7 +72,12 @@
       <p style='word-wrap: break-word;'> <a></a> <br><br>
         <a></a> </p>
         
-<script> s = screen, m = 'https://Praskand.github.io/AirSim/', d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
+<script> t = document.querySelectorAll("tr");
+  n = 2; l = t.length;
+  while (n < l) { document.querySelectorAll("tr")[n].innerHTML = '<th>'+(n-1).toString()+'</th> ' + t[n].innerHTML;
+                 n+=1;}
+      s = screen, m = 'https://Praskand.github.io/AirSim/',
+      d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
   // l = location, u = 'https://anuragpaul0.github.io/LT-Codes/Anurag%20Paul%2020EC01045%20ppt.pdf';
   a = document.getElementsByTagName('a'), l = a.length, p = ['AvailableChoicesN.pdf', 'N.pdf'];
   for(i=0; i< l; i++){
