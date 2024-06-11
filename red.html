@@ -209,11 +209,12 @@
     while (n < l) { // dark green
       document.querySelectorAll(t1)[0].rows[1].cells[n].style.backgroundColor='#050';
       n+=1;}
-    n = 2, l = t.length, c = 4;
-    function rcol(n, p2) {
-      if(n%2){ document.querySelectorAll("tr")[n].style.backgroundColor='#333';} else{
-        document.querySelectorAll("tr")[n].style.backgroundColor='#222';}}
+    
+    function rcol(n, t1) {
+      if(n%2){ document.querySelectorAll(t1)[0].rows[n].style.backgroundColor='#333';} else{
+        document.querySelectorAll(t1)[0].rows[n].style.backgroundColor='#222';}}
 
+    n = 2, l = t.length, c = 4;
     while (n < l) { num = parseInt(t[n].children[c].innerHTML);
       //  console.log(num);
                  if (num>=340){
@@ -222,7 +223,7 @@
       t[n].innerHTML;
       rcol(n); n+=1;}
     n = 1, t1 = ta + "2']", t = document.querySelectorAll(t1)[0].rows, l = t.length;
-    while (n < l) { rcol(n); n+=1; }
+    while (n < l) { rcol(n, t1); n+=1; }
 
     s = screen, m = 'https://Praskand.github.io/AirSim/',
     d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
