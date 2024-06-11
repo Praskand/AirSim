@@ -206,9 +206,8 @@
     t = document.querySelectorAll(t1)[0].rows
   // tr")
     , n = 1; l = t[1].cells.length;
-    while (n < l) {
+    while (n < l) { // dark green
       document.querySelectorAll(t1)[0].rows[1].cells[n].style.backgroundColor='#050';
-      // dark green
       n+=1;}
     n = 2, l = t.length, c = 4;
     function rcol(n, p2) {
@@ -218,7 +217,7 @@
     while (n < l) { num = parseInt(t[n].children[c].innerHTML);
       //  console.log(num);
                  if (num>=340){
-        document.querySelectorAll("tr")[n].children[c].style.color = 'red';}
+        document.querySelectorAll("tr")[n].children[c].style.color = '#e00';}
       document.querySelectorAll("tr")[n].innerHTML = '<td>'+(n-1).toString()+'</td> ' + 
       t[n].innerHTML;
       rcol(n); n+=1;}
