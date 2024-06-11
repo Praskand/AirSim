@@ -202,7 +202,8 @@
       <p style='word-wrap: break-word;'> <a></a> <br><br>
         <a></a> </p>
         
-  <script> console.clear(); t1 = "table[class='1']", t = document.querySelectorAll(t1)[0].rows
+  <script> console.clear(); ta = "table[class='", t1 = ta+"1']",
+    t = document.querySelectorAll(t1)[0].rows
   // tr")
     , n = 1; l = t[1].cells.length;
     while (n < l) {
@@ -221,16 +222,11 @@
       document.querySelectorAll("tr")[n].innerHTML = '<td>'+(n-1).toString()+'</td> ' + 
       t[n].innerHTML;
       rcol(n); n+=1;}
-    n = 1, t = document.querySelectorAll(t1)[0].rows;
-    while (n < l) { num = parseInt(t[n].children[c].innerHTML);
-      //  console.log(num);
-                 if (num>=340){
-        document.querySelectorAll("tr")[n].children[c].style.color = 'red';}
-      document.querySelectorAll("tr")[n].innerHTML = '<td>'+(n-1).toString()+'</td> ' + 
-      t[n].innerHTML;
-      rcol(n); n+=1;}
-        s = screen, m = 'https://Praskand.github.io/AirSim/',
-        d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
+    n = 1, t1 = ta + "2']", t = document.querySelectorAll(t1)[0].rows, l = t.length;
+    while (n < l) { rcol(n); n+=1; }
+
+    s = screen, m = 'https://Praskand.github.io/AirSim/',
+    d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
     // l = location, u = 'https://anuragpaul0.github.io/LT-Codes/Anurag%20Paul%2020EC01045%20ppt.pdf';
     a = document.getElementsByTagName('a'), l = a.length, p = ['AvailableChoicesN.pdf', 'N.pdf'];
     for(i=0; i< l; i++){
