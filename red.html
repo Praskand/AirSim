@@ -25,8 +25,8 @@
   <body> <table class="1"> <tr><th></th> <th colspan='2'></th>
         <th colspan='2' style="background-color:#090">2023</th>
         <th colspan='2' style="background-color:#090">2021</th></tr>
-      <tr style="background-color:#050"><th></th> <th>NIT</th> <th>PG Program</th> <th>Min GATE Score
-        </th> <th>Round</th> <th>Min GATE Score</th> <th>Round</th> </tr>
+      <tr><th></th> <th>NIT</th> <th>PG Program</th> <th>Min GATE Score</th> <th>Round</th>
+        <th>Min GATE Score</th> <th>Round</th> </tr>
         <!-- style="background-color:var(--color)" -->
       
         <!-- Trichy</td> <td>Communication System</td>
@@ -65,7 +65,7 @@
         <td>Electronic Instrumentation and Embedded Systems</td> <td>335</td> <td>Round 2</td>
         <td>373</td> <td>Round 3</td></tr> -->
       </table>
-    <div class="contentmiddiv" style="overflow: auto; border-collapse: collapse; height: 350px">
+    <div class="contentmiddiv" style="overflow: auto; border-collapse: collapse;">
     <h4>Total Filled Choice(s) -
             <span id="ctl00_ContentPlaceHolder1_LabtotChFill" class="badge">7</span></h4>
     <table class="table table-bordered table-condensed appstatustable" width="100%">
@@ -202,7 +202,10 @@
         
   <script> console.clear(); t = document.querySelectorAll("table[class='1']")[0].rows
   // tr")
-    , n = 2; l = t.length; c = 4;
+    , n = 1; l = t[1].cells.length;
+    while (n < l) {
+      document.querySelectorAll("table[class='1']")[0].rows[1].cells[n].style.backgroundColor='#050';}
+    n = 2, l = t.length, c = 4;
     while (n < l) { num = parseInt(t[n].children[c].innerHTML);
       //  console.log(num);
                  if (num>=340){
