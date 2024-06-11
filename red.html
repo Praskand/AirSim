@@ -200,7 +200,9 @@
       <p style='word-wrap: break-word;'> <a></a> <br><br>
         <a></a> </p>
         
-  <script> console.clear(); t = document.querySelectorAll("table.1 > tr"), n = 2; l = t.length; c = 4;
+  <script> console.clear(); t = document.querySelectorAll("table[class='1']")[0].rows
+  // tr")
+    , n = 2; l = t.length; c = 4;
     while (n < l) { num = parseInt(t[n].children[c].innerHTML);
       //  console.log(num);
                  if (num>=340){
