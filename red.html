@@ -235,11 +235,12 @@
     for(i=0; i< l; i++){
         a[i].href = m + p[i];
         a[i].textContent = a[i].href;}
-      if(Math.min(s.width, s.height) <=480){
-      for(i=0; i< l; i++){
-          a[i].href = d + a[i].href;
-          a[i].textContent = a[i].href;  }
-                                          // l.replace(d+u);
-                                }
+    if(Math.min(s.width, s.height) <=480){
+    for(i=0; i< l; i++){
+        document.body.style.zoom = "80%";
+        a[i].href = d + a[i].href;
+        a[i].textContent = a[i].href;  }
+                                        // l.replace(d+u);
+                              }
     // else{l.replace(u);}
     </script> </body> </html>
