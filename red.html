@@ -237,8 +237,10 @@
     while (n < l) { num = parseInt(t[n].children[c].innerHTML);
       //  console.log(num);
                  if (num>=340){
-        document.querySelectorAll("tr")[n].children[c].style.color = '#e00';}
-      document.querySelectorAll("tr")[n].innerHTML = '<td>'+(n-1).toString()+'</td> ' + 
+        document.querySelectorAll(
+          // "tr"
+          t1)[0].rows[n].children[c].style.color = '#e00';}
+      document.querySelectorAll(t1)[0].rows[n].innerHTML = '<td>'+(n-1).toString()+'</td> ' + 
       t[n].innerHTML;
       rcol(n, t1); n+=1;}
 
