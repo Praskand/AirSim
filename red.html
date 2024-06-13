@@ -23,12 +23,12 @@
 } */
   </style></head>
 
-  <body>
+  <body><div>
     <h3 class="text-center">
     <span id="ctl00_lblSubHeader">CCMT Counselling 2024</span>
     </h3>
     <table class="table table-bordered table-condensed dataTable no-footer"
-    id="ORCRGridView" style="border-collapse: collapse;" role="grid" aria-describedby="ORCRGridView_info">
+    id="ORCRGridView" role="grid" aria-describedby="ORCRGridView_info">
 			<thead>
 				<tr class="bg-primary" role="row" style="background-color:rgb(255, 248, 0); color:#000">
           <th scope="col" class="sorting_disabled" rowspan="1" colspan="1"
@@ -49,7 +49,7 @@
 			<tr class="even">
 					<td>8</td><td>Round 1</td><td>National Institute of Technology Hamirpur</td><td>Electronics &amp; Communication Engineering (Communications System and Networks)</td><td>G1</td><td>SC</td><td>340</td><td>300</td>
 				</tr></tbody>
-		</table>
+		</table><br>
     <table class="1">
       <tr><th></th> <th colspan='2'></th>
       <th colspan='2' style="background-color:#090">2023</th>
@@ -232,7 +232,7 @@
       <li>NIT surathkal - Signal Processing and Machine Learning</li>
       <li>Milk </li> </ol> -->
       <p style='word-wrap: break-word;'> <a></a> <br><br>
-        <a></a> </p>
+        <a></a> </p></div>
         
   <script> console.clear(); ta = "table[class='", t1 = ta+"1']",
     t = document.querySelectorAll(t1)[0].rows
@@ -242,7 +242,7 @@
       document.querySelectorAll(t1)[0].rows[1].cells[n].style.backgroundColor='#050';
       n+=1;}
     
-    function rcol(n, t1) {
+    function rcol(n, t1) { // no loop
       if(n%2){ document.querySelectorAll(t1)[0].rows[n].style.backgroundColor='#333';} else{
         document.querySelectorAll(t1)[0].rows[n].style.backgroundColor='#222';}}
 
