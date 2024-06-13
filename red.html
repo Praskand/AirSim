@@ -262,7 +262,9 @@
     s = screen, m = 'https://Praskand.github.io/AirSim/',
     d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
     // l = location, u = 'https://anuragpaul0.github.io/LT-Codes/Anurag%20Paul%2020EC01045%20ppt.pdf';
-    a = document.getElementsByTagName('a'), l = a.length, p = ['AvailableChoicesN.pdf', 'N.pdf'];
+    a = document.querySelectorAll('p > a')
+    // getElementsByTagName('a')
+    , l = a.length, p = ['AvailableChoicesN.pdf', 'N.pdf'];
     for(i=0; i< l; i++){
         a[i].href = m + p[i];
         a[i].textContent = a[i].href;}
