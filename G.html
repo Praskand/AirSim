@@ -5,11 +5,11 @@
     <title>G</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style> :root {color-scheme: dark;
-    --h: calc(16px*30); --i: 3;
+    --h: calc(16px*30); --w: calc(var(--h)/(1+1/var(--i))); --i: 3;
    }
 .square {
   height: var(--h);
-  width: calc(var(--h)/(1+1/var(--i)));
+  width: calc(var(--w));
   border: 1px solid rgb(255, 0, 0);
   text-align: center;
   /* 9/16 */
@@ -17,30 +17,37 @@
 }
 .lb { position:absolute;
   height: var(--h);
-  width: calc(var(--h)/(1+1/var(--i)));
+  width: calc(var(--w));
   border-top: 1px solid rgb(255, 0, 0);
   transform: rotate(45deg);
   transform-origin: 0% 0%;
-  text-align: center;
-  /* 9/16 */
-  /* background-color: #555; */
 }
 .lu { position:absolute;
   height: var(--h);
-  width: calc(var(--h)/(1+1/var(--i)));
+  width: calc(var(--w));
   border-bottom: 1px solid rgb(255, 0, 0);
   transform: rotate(-45deg);
   transform-origin: 0% 0%;
-  text-align: center;
-  /* 9/16 */
-  /* background-color: #555; */
+}
+.lm { position:absolute;
+  height: var(--h);
+  width: calc(var(--w));
+  border-top: 1px solid rgb(255, 0, 0);
+  transform: translate(0, calc(var(--h)/2));
+}
+.lc { position:absolute;
+  height: var(--h);
+  width: calc(var(--w));
+  border-left: 1px solid rgb(255, 0, 0);
+  transform: translate(calc(var(--w)/2));
 }
 </style>
 </head>
 <body>
 
 <!-- <h2>Square CSS</h2> -->
-<center> <div class="square"></div> <div class="lb"></div>  <div class="lu"></div> </center>
+<center> <div class="square"></div> <div class="lb"></div> <div class="lu"></div> <div class="lm"></div>
+     <div class="lc"></div> </center>
 <script> console.clear(); </script>
 </body>
 </html> 
