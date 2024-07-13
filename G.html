@@ -47,7 +47,14 @@
  i = 3,
 w = (h/(1+1/i))
 // .toString()
-, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${w} ${h}' height = ${h}>
+, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${w} ${h}' height = ${h} style="
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;">
     <path d = "M 0 0 h ${w} v ${h} H 0 z l ${w} ${h} M 0 ${h} L ${w} 0 M ${w/2} 0 v ${h} M 0 ${h/2
     } h ${w}" fill = "transparent" stroke = "red"/> </svg> </center> `;
 // s.setAttribute();
