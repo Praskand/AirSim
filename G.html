@@ -54,9 +54,9 @@
 <center> <div class="square"></div> <div class="lb"></div> <div class="lu"></div> <div class="lm"></div>
      <div class="lc"></div> </center>
 
-<script> console.clear(), d = document, w = 300, s = d.createElement("svg");
-s.setAttribute('viewBox', '0 0 ${w} 512'); p = d.createElement('path');
-p.setAttribute('d','M 0 0 H ${w}'); s.appendChild(p);
+<script> console.clear(), d = document, w = '300', s = d.createElement("svg");
+s.setAttribute('viewBox', `0 0 ${w} 512`); p = d.createElement('path');
+p.setAttribute('d',`M 0 0 H ${w}`); s.appendChild(p);
 
 setAttributes = (el, attrs) => {
     for(var key in attrs) {
