@@ -54,11 +54,11 @@
 <center> <div class="square"></div> <div class="lb"></div> <div class="lu"></div> <div class="lm"></div>
      <div class="lc"></div> </center>
 
-<script> console.clear(), d = document, w = '300', s = d.createElement("svg");
-s.setAttribute('viewBox', `0 0 ${w} 512`); p = d.createElement('path');
-p.setAttribute('d',`M 0 0 H ${w}`); s.appendChild(p);
+<script> console.clear(), d = document, w = '300', i = 3, h = w/(1+1/i), s = d.createElement("svg");
+s.setAttribute('viewBox', `0 0 ${w} ${h}`); p = d.createElement('path');
+p.setAttribute('d',`M 0 0 H ${w} V ${h}`); s.appendChild(p);
 
-setAttributes = (el, attrs) => {
+// setAttributes = (el, attrs) => {
     for(var key in attrs) {
       el.setAttribute(key, attrs[key]);
     } };
