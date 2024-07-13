@@ -50,18 +50,21 @@
         style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
       </svg> -->
 <!-- <h2>Square CSS</h2> -->
-<!-- <center> <div class="square"></div> <div class="lb"></div> <div class="lu"></div> <div class="lm"></div>
+<!-- <center> <div class="square"></div> <div class="lb"></div> <div class="lu"></div>
+    <div class="lm"></div>
      <div class="lc"></div> </center> -->
 
-<script> console.clear(), d = document, w = '300', i = 3, h = w/(1+1/i), s = d.createElement("svg");
-s.setAttribute('viewBox', `0 0 ${w} ${h}`); p = d.createElement('path');
-p.setAttribute('d',`M 0 0 H ${w} V ${h}`); s.appendChild(p);
+<script> console.clear(), d = document, wi = 300, w = wi.toString(), i = 3,
+h = (w/(1+1/i)).toString(), s = d.createElement("svg");
+// s.setAttribute();
+p = d.createElement('path');
+p.setAttribute('d',`M 0 0 H ${w} V ${h}`);
 
-// setAttributes = (el, attrs) => {
-    // for(var key in attrs) {
-    //   el.setAttribute(key, attrs[key]);
-    // } };
-//   setAttributes(elem, {"src": "http://example.com/something.jpeg", "height": "100%"});
+setAttributes = (el, attrs) => {
+    for(var key in attrs) {
+      el.setAttribute(key, attrs[key]);
+    } };
+  setAttributes(s, {'viewBox': `0 0 ${w} ${h}`, 'height':h}); s.appendChild(p);
     // rect.setAttribute('y',5);
     // rect.setAttribute('width',500);
     // rect.setAttribute('height',500);
