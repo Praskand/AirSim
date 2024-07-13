@@ -58,17 +58,15 @@
 h = (w/(1+1/i)).toString(), s = d.createElement("svg");
 // s.setAttribute();
 p = d.createElement('path');
-p.setAttribute('d',`M 0 0 H ${w} V ${h}`);
 
 setAttributes = (el, attrs) => {
     for(var key in attrs) {
-      el.setAttribute(key, attrs[key]);
-    } };
+      el.setAttribute(key, attrs[key]); } };
+setAttribute(p, {'d' : `M 0 0 H ${w} V ${h}`, 'fill' : "transparent", 'stroke' : "red"});
   setAttributes(s, {'viewBox': `0 0 ${w} ${h}`, 'height':h}); s.appendChild(p);
     // rect.setAttribute('y',5);
     // rect.setAttribute('width',500);
     // rect.setAttribute('height',500);
     // rect.setAttribute('fill','#95B3D7');
     d.body.appendChild(s); </script>
-</body>
-</html> 
+</body> </html> 
