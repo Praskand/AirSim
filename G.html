@@ -54,19 +54,25 @@
     <div class="lm"></div>
      <div class="lc"></div> </center> -->
 
-<script> console.clear(), d = document, wi = 300, w = wi.toString(), i = 3,
-h = (w/(1+1/i)).toString(), s = d.createElement("svg");
+<script> console.clear(), d = document, w = 300,
+//  w = wi.toString(), 
+ i = 3,
+h = (w/(1+1/i))
+// .toString()
+, s = d.body.innerHTML += `<svg viewBox = '0 0 ${w} ${h}' height = ${h}>
+    <path d = "M 0 0 H ${w} V ${h}" fill = "transparent" stroke = "red"/> </svg>`;
 // s.setAttribute();
-p = d.createElement('path');
 
-setAttributes = (el, attrs) => {
-    for(var key in attrs) {
-      el.setAttribute(key, attrs[key]); } };
-setAttribute(p, {'d' : `M 0 0 H ${w} V ${h}`, 'fill' : "transparent", 'stroke' : "red"});
-  setAttributes(s, {'viewBox': `0 0 ${w} ${h}`, 'height':h}); s.appendChild(p);
+// setAttributes = (el, attrs) => {
+//     for(var key in attrs) {
+//       el.setAttribute(key, attrs[key]); } };
+//   setAttributes(s, {'viewBox': `0 0 ${w} ${h}`, 'height':h});
+// s.innerHTML = `<path d = "M 0 0 H ${w} V ${h}" fill = "transparent" stroke = "red"/>`;
+// setAttribute(p, {'}); s.appendChild(p);
     // rect.setAttribute('y',5);
     // rect.setAttribute('width',500);
     // rect.setAttribute('height',500);
     // rect.setAttribute('fill','#95B3D7');
-    d.body.appendChild(s); </script>
+    // d.body.appendChild(s);
+    </script>
 </body> </html> 
