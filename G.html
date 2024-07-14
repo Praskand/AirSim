@@ -48,7 +48,7 @@ h = sh*hf
 w = h/wf, g = (1-hf)*sh/2, r = sw/40, lg = (1-hf)*sw/2, rc = (1+hf)*sw/2, bes = sh - g/2 - 40, sca = 4,
 c = `<path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5 8.5C4.8
-  8.9375 3 11.2001 3 13.6493Z" transform="scale(${sca})"/>`, yc = g/2 - 13.6493*sca
+  8.9375 3 11.2001 3 13.6493Z" transform="scale(${sca})"/>`, yc = g/2 - 13.6493*(sca-1)
 // 1+hf)*sh/2+40
 , d = document, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
