@@ -57,10 +57,12 @@ w = h/wf, g = (1-hf)*sh/2, r = sw/40
     
     margin: auto;"> <circle cx="${sw/2}" cy="${g/2}" r="40"
   stroke="green" stroke-width="4" fill="yellow" />
-    <path transform="translate(${(1-hf)*sw/2}, ${g})" d = "M${r} 0A${r} ${r}, 0, 0, 1, 0 ${r
-    }M 0 0 h ${w} v ${h} H 0 z l ${w} ${h
+  <g transform="translate(${(1-hf)*sw/2}, ${g})">
+    <path d="M0 0 ${r} 0A${r} ${r}, 0, 0, 1, 0 ${r}z M0 ${sh} ${r} ${sh}A${r} ${r}, 0, 0, 1, 0 ${sh - r
+    }z"/>
+    <path d = "M 0 0 h ${w} v ${h} H 0 z l ${w} ${h
     } M 0 ${h} L ${w} 0 M ${w/2} 0 v ${h} M 0 ${h/2
-    } h ${w}" fill = "transparent" stroke = "red"/> </svg> </center> `;
+    } h ${w}" fill = "transparent" stroke = "red"/> </svg> </g> </center> `;
 // s.setAttribute();
 
 // setAttributes = (el, attrs) => {
