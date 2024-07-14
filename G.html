@@ -44,20 +44,14 @@
 <body>
 <script> console.clear(), sh = window.innerHeight, i = 3, wf = (1+1/i), sw = sh/wf, hf = 5/8,
 h = sh*hf
-// 500 w = wi.toString(), 
-w = h/wf, g = (1-hf)*sh/2, r = sw/40, lg = (1-hf)*sw/2
-// .toString()
+// 500
+w = h/wf, g = (1-hf)*sh/2, r = sw/40, lg = (1-hf)*sw/2, cx = (1+hf)*sw/2 - 40
 , d = document, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
-  } style="
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
+  } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
+
     margin: auto;"> <circle cx="${lg + 40}" cy="${g/2}" r="40" stroke="green" stroke-width="4"
     fill="yellow"/>
-     <circle cx="${(1+hf)*sw/2 - 40}" cy="${g/2}" r="40" stroke="green" stroke-width="4" fill="yellow" />
+     <circle cx="${cx}" cy="${g/2}" r="40" stroke="green" stroke-width="4" fill="yellow" />
     <circle cx="${sw/2}" cy="${g/2}" r="40" stroke="green" stroke-width="4" fill="yellow" />
   <g transform="translate(${lg}, ${g})" stroke = "red">
     <path d = "M 0 0 h ${w} v ${h} H 0 z l ${w} ${h
@@ -67,7 +61,12 @@ w = h/wf, g = (1-hf)*sh/2, r = sw/40, lg = (1-hf)*sw/2
     }z M${w} 0 v${r} a${r} ${r}, 0, 0, 1, ${-r} ${-r}z M${w} ${h} v${-r} a${r} ${r}, 0, 0, 0, ${-r} ${r
     }z" fill = "black"/>
     <circle cx="${w/2}" cy="${h/2}" r="40" fill="black"/>
-    <circle cx="${w/2}" cy="${h/2}" r="4" fill="red"/> </svg> </g> </center>`;
+    <circle cx="${w/2}" cy="${h/2}" r="4" fill="red"/>
+    <rect width="80" height="80" x="${lg}" y="${cx}" style="opacity:1.0000000;fill:none;
+    fill-opacity:1.0000000;fill-rule:evenodd;
+    stroke-width:4.0000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.0000000;
+    stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000"/> </svg>
+    </g> </center>`;
 // s.setAttribute();
 
 // setAttributes = (el, attrs) => {
