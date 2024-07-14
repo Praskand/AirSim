@@ -55,8 +55,9 @@ w = h/wf, g = (1-hf)*sh/2, r = sw/40
     left: 0;
     right: 0;
     
-    margin: auto;"> <circle cx="${sw/2}" cy="${g/2}" r="40"
-  stroke="green" stroke-width="4" fill="yellow" />
+    margin: auto;"> <circle cx="40" cy="${g/2}" r="40" stroke="green" stroke-width="4" fill="yellow"/>
+     <circle cx="${sw - 40}" cy="${g/2}" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    <circle cx="${sw/2}" cy="${g/2}" r="40" stroke="green" stroke-width="4" fill="yellow" />
   <g transform="translate(${(1-hf)*sw/2}, ${g})" stroke = "red">
     <path d = "M 0 0 h ${w} v ${h} H 0 z l ${w} ${h
     } M 0 ${h} L ${w} 0 M ${w/2} 0 v ${h} M 0 ${h/2
