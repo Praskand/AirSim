@@ -42,12 +42,11 @@
 } */
 </style> </head>
 <body>
-<script> console.clear(), d = document, h = 500,
-//  w = wi.toString(), 
- i = 3,
-w = (h/(1+1/i))
+<script> console.clear(), sh = screen.height, i = 3, wf = (1+1/i), sw = sh/sf, h = sh*5/8
+// 500 w = wi.toString(), 
+w = h/wf
 // .toString()
-, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${w} ${h}' height = ${h} style="
+, d = document, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh} style="
     position: absolute;
     top:0;
     bottom: 0;
