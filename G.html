@@ -3,7 +3,7 @@
     "https://avatars.githubusercontent.com/u/95966972?v=4">
     <title>G</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style> :root {color-scheme: dark;
+<style> :root {color-scheme: dark
     /* --h: calc(16px*30); --w: calc(var(--h)/(1+1/var(--i))); --i: 3; */
    }
 /* .square {
@@ -42,21 +42,21 @@
 } */
 </style> </head>
 <body>
-<script> console.clear(), sh = window.innerHeight, i = 3, wf = (1+1/i), sw = sh/wf, hf = 5/8,
+<script> console.clear(), sh = window.innerHeight, i = 3, wf = (1+1/i), sw = sh/wf, hf = 5/8
 h = sh*hf
 // 500
 w = h/wf, g = (1-hf)*sh/2, r = sw/40, lg = (1-hf)*sw/2, rc = (1+hf)*sw/2, bes = sh - g/2 - 40, sca = 4,
 c = `<path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21
   12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5 8.5C4.8
-  8.9375 3 11.2001 3 13.6493Z" transform="scale(${sca})"/>`, yc = g/2 - (13/2+5)*sca,
+  8.9375 3 11.2001 3 13.6493Z" transform="scale(${sca})"/>`, yc = g/2 - (13/2+5)*sca
 // `<g stroke="grey" stroke-width="4" fill="black"> <circle cx="${lg + 40}" cy="${g/2}" r="40"/>
 //      <circle cx="${rc - 40}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // 1+hf)*sh/2+40
-ul = '', ll = '',
-y = Math.round(Math.random()) ? () => {ul = l; return g/2} : () => {ll = l; return bes},
-console.log(ul, ll, y),
+ul = '', ll = ''
+if (Math.round(Math.random())) {ul = l, y = g/2} else {ll = l, y = bes}
+console.log(ul, ll, y)
 l = `<g stroke="grey" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
   <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2} ${y}h${w/2 - 40}"/> </g>`,
 wh = `width="80" height="80"`
