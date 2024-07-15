@@ -66,7 +66,7 @@ stroke-width="1">
   move = (l) => { e = d.getElementById(l.o)
     el = d.getElementById(l.i)
     str = (s = '') => {el.setAttribute('stroke', s)}
-    str(e.c)
+    str(l.c)
     console.log('e, el', e, el)
     // This handler will be executed only once when the cursor
 // moves over
@@ -89,7 +89,7 @@ e.addEventListener(
   "mouseleave",
   (event) => {
     // mouseleave target
-    str(e.c)
+    str(l.c)
 
     // reset the color after a short delay
     setTimeout(() => {
