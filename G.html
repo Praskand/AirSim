@@ -65,7 +65,7 @@ stroke-width="1">
 
   move = (l) => { e = d.getElementById(l.o)
     el = d.getElementById(l.i)
-    str = (s = '') => el.setAttribute('stroke', s)
+    str = (s = '') => {el.setAttribute('stroke', s)}
     str(e.c)
     console.log('e, el', e, el)
     // This handler will be executed only once when the cursor
