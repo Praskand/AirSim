@@ -50,14 +50,14 @@ c = `<path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.98
   12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5 8.5C4.8
   8.9375 3 11.2001 3 13.6493Z" transform="scale(${sca})"/>`, yc = g/2 - (13/2+5)*sca,
-l = `<g stroke="grey" stroke-linecap="round" stroke-linejoin="round"
-  stroke-width="1"> <path d="M${lg + 40} ${g/2}h${w/2 - 40}"/> <path d="M${sw/2} ${g/2}h${w/2 - 40}"/>
-  </g>`,
 // `<g stroke="grey" stroke-width="4" fill="black"> <circle cx="${lg + 40}" cy="${g/2}" r="40"/>
 //      <circle cx="${rc - 40}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // 1+hf)*sh/2+40
-Math.round(Math.random()) ? ul = l : ll = l
+y = Math.round(Math.random()) ? () => {ul = l; return g/2} : () => {ll = l; return bes},
+l = `<g stroke="grey" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+  <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2} ${y}h${w/2 - 40}"/> </g>`,
+wh = `width="80" height="80"`
 , d = document, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
 
@@ -83,9 +83,9 @@ Math.round(Math.random()) ? ul = l : ll = l
       fill-opacity:1.0000000;fill-rule:evenodd;
       stroke-width:4.0000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4.0000000;
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000">
-    <rect x="${lg}" width="80" height="80" y="${bes}"/>
-    <rect x="${rc - 80}" width="80" height="80" y="${bes}"/>
-    <rect x="${sw/2 - 40}" width="80" height="80" y="${bes}"/> </g> </svg> </center>`;
+    <rect x="${lg}" ${wh} y="${bes}"/>
+    <rect x="${rc - 80}" ${wh} y="${bes}"/>
+    <rect x="${sw/2 - 40}" ${wh} y="${bes}"/> </g> </svg> </center>`;
 // s.setAttribute();
 
 // setAttributes = (el, attrs) => {
