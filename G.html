@@ -59,19 +59,21 @@ ul = { o: 'up', i: 'ul', c: 'grey'
 //     alert(this.a + this.b);
 //   }
 }, ll = { o: 'dn', i: 'll', c: 'yellow' }, d = document
-l = (y, l) =>`<g id = '${l.i}' stroke="${l.c}" stroke-linecap="round" stroke-linejoin="round"
+l = (y, l) =>`<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1">
   <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2 + 1} ${y}h${w/2 - 40}"/> </g>`
 
   move = (l) => { e = d.getElementById(l.o)
     el = d.getElementById(l.i)
+    str = (s = '') => el.setAttribute('stroke', s)
+    str(e.c)
     // This handler will be executed only once when the cursor
 // moves over
 e.addEventListener(
   "mouseenter",
   (event) => {
     // mouseenter target event
-    el.setAttribute('stroke', '')
+    str()
 
     // reset the color after a short delay
     setTimeout(() => {
@@ -86,7 +88,7 @@ e.addEventListener(
   "mouseleave",
   (event) => {
     // mouseleave target
-    el.setAttribute('stroke', e.c)
+    str(e.c)
 
     // reset the color after a short delay
     setTimeout(() => {
