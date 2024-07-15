@@ -128,9 +128,12 @@ wh = `width="80" height="80"`
       stroke-width:4.0000000;stroke-linecap:round;stroke-linejoin:round;
       stroke-miterlimit:4.0000000;
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000">
-    <rect x="${lg}" ${wh} y="${bes}"/>
-    <rect x="${rc - 80}" ${wh} y="${bes}"/>
-    <rect x="${sw/2 - 40}" ${wh} y="${bes}"/> </g> </svg> </center>`
+    <rect x="${lg}" y="${bes} ${wh}"/>
+    <rect x="${rc - 80}" y="${bes} ${wh}"/>
+    <rect x="${sw/2 - 40}" y="${bes} ${wh}"/> </g>
+    
+    <g fill:transparent>
+      <rect x="${lg - 40}" y="${sh - g - 40} ${wh}"/> </g> </svg> </center>`
     move(li)
 // s
 
@@ -138,7 +141,6 @@ wh = `width="80" height="80"`
 //     for(var key in attrs) {
 //       el.setAttribute(key, attrs[key]); } };
 //   setAttributes(s, {'viewBox': `0 0 ${w} ${h}`, 'height':h});
-// s.innerHTML = `<path d = "M 0 0 H ${w} V ${h}" fill = "transparent" stroke = "red"/>`;
 // setAttribute(p, {'}); s.appendChild(p);
     // rect.setAttribute('y',5);
     // rect.setAttribute('width',500);
