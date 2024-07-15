@@ -54,6 +54,7 @@ c = `<path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.98
 //      <circle cx="${rc - 40}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // 1+hf)*sh/2+40
+ul = '', ll = '',
 y = Math.round(Math.random()) ? () => {ul = l; return g/2} : () => {ll = l; return bes},
 l = `<g stroke="grey" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
   <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2} ${y}h${w/2 - 40}"/> </g>`,
