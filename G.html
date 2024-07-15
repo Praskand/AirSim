@@ -55,10 +55,10 @@ c = `<path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.98
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // 1+hf)*sh/2+40
 ul = '', ll = ''
-if (Math.round(Math.random())) {ul = l, y = g/2} else {ll = l, y = bes}
-console.log(ul, ll, y)
 l = `<g stroke="grey" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-  <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2} ${y}h${w/2 - 40}"/> </g>`,
+  <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2} ${y}h${w/2 - 40}"/> </g>`
+if (Math.round(Math.random())) {y = g/2, ul = l} else {y = bes, ll = l}
+console.log(ul, ll, y)
 wh = `width="80" height="80"`
 , d = document, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
