@@ -54,36 +54,57 @@ c = `<path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.98
 //      <circle cx="${rc - 40}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // 1+hf)*sh/2+40
-ul = '', ll = '', d = document
-l = (y, g, id) =>`<g id = '${id}' stroke="${g}" stroke-linecap="round" stroke-linejoin="round"
+ul = { o: 'up', i: 'ul', c: 'grey'
+// ,'doStuff': function() {
+//     alert(this.a + this.b);
+//   }
+}, ll = { o: 'dn', i: 'll', c: 'yellow' }, d = document
+l = (y, l) =>`<g id = '${l.i}' stroke="${l.c}" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1">
   <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2 + 1} ${y}h${w/2 - 40}"/> </g>`
 
-  move = (id) => { // This handler will be executed only once when the cursor
+  move = (l) => { e = d.getElementById(l.o)
+    el = d.getElementById(l.i)
+    // This handler will be executed only once when the cursor
 // moves over
-d.getElementById(id).addEventListener(
+e.addEventListener(
   "mouseenter",
   (event) => {
-    // highlight the mouseenter target
-    // event
-    d.getElementById(li).setAttribute('stroke', '');
+    // mouseenter target event
+    el.setAttribute('stroke', '')
 
     // reset the color after a short delay
     setTimeout(() => {
-      event.target.style.color = "";
-    }, 500);
+      event.target.style.color = ""
+    }, 500)
   },
   false,
-); }
-if (Math.round(Math.random())) {li = 'll'} else {li = 'ul'}
+)
+
+// Briefly, when the mouse moves off the element
+e.addEventListener(
+  "mouseleave",
+  (event) => {
+    // mouseleave target
+    el.setAttribute('stroke', e.c)
+
+    // reset the color after a short delay
+    setTimeout(() => {
+      event.target.style.color = ""
+    }, 1000)
+  },
+  false,
+) }
+if (Math.round(Math.random())) {li = ll} else {li = ul}
 console.log('ul, ll',ul, ll)
 wh = `width="80" height="80"`
 , s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
 
-    margin: auto;"> ${l(g/2, 'grey', 'ul')}
+    margin: auto;"> ${l(g/2, ul)}
 
-    <g id = 'up' stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id = 'up' stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
+    stroke-width="1">
 <g transform="translate(${lg-3*(sca-1)}, ${yc})"> ${c}</g>
 <g transform="translate(${rc - 22*sca}, ${yc})"> ${c} </g>
 <g transform="translate(${sw/2-(18/2+3)*sca}, ${yc})"> ${c} </g> </g>
@@ -97,16 +118,17 @@ wh = `width="80" height="80"`
     } ${r
     }z" fill = "black"/>
     <circle cx="${w/2}" cy="${h/2}" r="40" fill="black"/>
-    <circle cx="${w/2}" cy="${h/2}" r="4" fill="red"/> </g> ${l(sh - g/2, 'yellow', 'll')}
+    <circle cx="${w/2}" cy="${h/2}" r="4" fill="red"/> </g> ${l(sh - g/2, ll)}
 
-    <g stroke = "yellow" style="opacity:1.0000000;fill:green;
+    <g id='dn' stroke = "yellow" style="opacity:1.0000000;fill:green;
       fill-opacity:1.0000000;fill-rule:evenodd;
       stroke-width:4.0000000;stroke-linecap:round;stroke-linejoin:round;
       stroke-miterlimit:4.0000000;
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000">
     <rect x="${lg}" ${wh} y="${bes}"/>
     <rect x="${rc - 80}" ${wh} y="${bes}"/>
-    <rect x="${sw/2 - 40}" ${wh} y="${bes}"/> </g> </svg> </center>`;
+    <rect x="${sw/2 - 40}" ${wh} y="${bes}"/> </g> </svg> </center>`
+    move(li)
 // s
 
 // setAttributes = (el, attrs) => {
