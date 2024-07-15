@@ -57,7 +57,7 @@ c = `<path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.98
 ul = '', ll = ''
 l = y =>`<g stroke="grey" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
   <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2 + 1} ${y}h${w/2 - 40}"/> </g>`
-if (Math.round(Math.random())) {ll = l(bes)} else {ul = l(g/2)}
+if (Math.round(Math.random())) {ll = l(sh - g/2)} else {ul = l(g/2)}
 console.log('ul, ll',ul, ll)
 wh = `width="80" height="80"`
 , d = document, s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
