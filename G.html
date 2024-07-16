@@ -141,24 +141,26 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
     <rect id='dnp'x="${cen}" y="${bes}" ${wh}/> </g>` +
 
     `<g fill="transparent">
-      <rect x="${vl}" y="${t}" ${wh}/>
-      <rect x="${vr}" y="${t}" ${wh}/>
-      <rect x="${cen}" y="${t}" ${wh}/>
-      <rect x="${vl}" y="${m}" ${wh}/>
-      <rect x="${vr}" y="${m}" ${wh}/>
-      <rect x="${cen}" y="${m}" ${wh}/>
-      <rect x="${vl}" y="${lol}" ${wh}/>
-      <rect x="${vr}" y="${lol}" ${wh}/>
-      <rect x="${cen}" y="${lol}" ${wh}/> </g> </svg> </center>`
-    move(li), d.querySelectorAll(li.p).forEach(el => {
+      <rect x="${vl}" y="${t}" ${wh} id ='tr'/>
+      <rect x="${vr}" y="${t}" ${wh} id ='tr'/>
+      <rect x="${cen}" y="${t}" ${wh} id ='tr'/>
+      <rect x="${vl}" y="${m}" ${wh} id ='tr'/>
+      <rect x="${vr}" y="${m}" ${wh} id ='tr'/>
+      <rect x="${cen}" y="${m}" ${wh} id ='tr'/>
+      <rect x="${vl}" y="${lol}" ${wh} id ='tr'/>
+      <rect x="${vr}" y="${lol}" ${wh} id ='tr'/>
+      <rect x="${cen}" y="${lol}" ${wh} id ='tr'/> </g> </svg> </center>`
+    move(li), modo = (q, f) => {d.querySelectorAll(q).forEach(el => {
       el.addEventListener(
-  "mousedown", (
+  "mousedown", f
+) }); }
+    modo(li.p, (
   // event, callback fn
 ) => {
   controller.abort(); // remove listener
-  }
-)
-    });
+  modo('tr', () => {
+  controller.abort(); // remove listener
+  } )})
 // s
 
 // setAttributes = (el, attrs) => {
