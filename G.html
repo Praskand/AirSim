@@ -110,7 +110,7 @@ if (Math.round(Math.random())) {li = ll} else {li = ul}
 // console.log('li',li)
 cen = sw/2 - 40, t = g - 40, tcx = [lg-3*(sca-1), sw/2-(18/2+3)*sca, rc - 22*sca]
 wh = `width="80" height="80"`, lol = sh - g - 40, m = sh/2 - 40, vl = lg - 40, vr = rc - 40
-trcx = [tcx[0] - 40, tcx[1], tcx[0] + 40], trcy = [g, sh/2, sh - g] - cly
+trcx = [tcx[0] - 40, tcx[1], tcx[0] + 40], trcy = [g, sh/2, sh - g].map(e => e - cly);
 s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
 
@@ -153,7 +153,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
       <rect x="${vr}" y="${lol}" ${wh} id ='tr'/>
       <rect x="${cen}" y="${lol}" ${wh} id ='tr'/> </g> </svg> </center>`
     move(li), modo = q => d.querySelectorAll(q)
-
+// p id
     modo(li.p).forEach(el => {
       el.addEventListener(
   "mousedown", (
