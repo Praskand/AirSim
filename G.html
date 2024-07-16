@@ -112,10 +112,7 @@ e.addEventListener(
 s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
 
-    margin: auto;"> ${l(g/2, ul)}
-
-    <g id = 'up' stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
-    stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
+    margin: auto;"> ${l(g/2, ul)}` +
 
   `<g transform="translate(${lg}, ${g})" stroke = "red">
     <path d = "M 0 0 h ${w} v ${h} H 0 z l ${w} ${h
@@ -127,6 +124,9 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
     }z" fill = "black"/>
     <circle cx="${w/2}" cy="${h/2}" r="40" fill="black"/>
     <circle cx="${w/2}" cy="${h/2}" r="4" fill="red"/> </g> ${l(sh - g/2, ll)}` +
+
+`<g id = 'up' stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
+stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
 
     `<g id='dn' stroke = "yellow" style="opacity:1.0000000;fill:green;
       fill-opacity:1.0000000;fill-rule:evenodd;
