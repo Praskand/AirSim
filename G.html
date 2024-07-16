@@ -157,7 +157,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   // event, callback fn
 ) => {
   controller.abort(); // remove listener
-  modo('#tr').forEach(tre => {
+  modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
   "mousedown", (
   // event, callback fn
