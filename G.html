@@ -105,7 +105,9 @@ e.addEventListener(
 if (Math.round(Math.random())) {li = ll} else {li = ul}
 cen = sw/2 - 40, t = g - 40, tcx = [lg-3*(sca-1), sw/2-(18/2+3)*sca, rc - 22*sca]
 wh = `width="80" height="80"`, lol = sh - g - 40, m = sh/2 - 40, vl = lg - 40, vr = rc - 40
-trcx = [tcx[0] - 40, tcx[1], tcx[0] + 40], trcy = [g, sh/2, sh - g].map(e => e - cly)
+xco = (l, m, r) => [l - 40, m, r + 40], trcx = xco(tcx[0], tcx[1], tcx[0]), rb = rc - 80
+trbx = xco(lg, cen, rb)
+trcy = [g, sh/2, sh - g].map(e => e - cly)
 console.log('trcy, g',trcy, g)
 c = x => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = 'upl' d="M3 13.6493C3 16.6044
 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
@@ -136,7 +138,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
       stroke-miterlimit:4.0000000;
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000">
     <rect id='dnp'x="${lg}" y="${bes}" ${wh}/>
-    <rect id='dnp'x="${rc - 80}" y="${bes}" ${wh}/>
+    <rect id='dnp'x="${rb}" y="${bes}" ${wh}/>
     <rect id='dnp'x="${cen}" y="${bes}" ${wh}/> </g>` +
 
     `<g fill="transparent" id ='tr'>
@@ -150,6 +152,10 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
       <rect x="${vr}" y="${lol}" ${wh} id ='22'/>
       <rect x="${cen}" y="${lol}" ${wh} id ='21'/> </g> </svg> </center>`
     move(li), modo = q => d.querySelectorAll(q)
+
+setAttributes = (el, attrs) => {
+    for(var key in attrs) {
+      el.setAttribute(key, attrs[key]); } };
 // p id
     modo(li.p).forEach(el => {
       el.addEventListener(
@@ -164,13 +170,10 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
 ) => { i = tre.getAttribute('id'), console.log(i)
   if (li.o == 'up')
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcx[+i[1]]}) scale(${sca})`)
+  else setAttributes(el, {'x': `${w}`, 'y':h}trcx[+i[0]]}, ${trcx[+i[1]]}) scale(${sca})`)
   } )}
 ) }) } )
 // s
-
-// setAttributes = (el, attrs) => {
-//     for(var key in attrs) {
-//       el.setAttribute(key, attrs[key]); } };
 //   setAttributes(s, {'viewBox': `0 0 ${w} ${h}`, 'height':h});
 // setAttribute(p, {'}); s.appendChild(p);
     // rect.setAttribute('y',5);
