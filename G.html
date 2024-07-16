@@ -161,7 +161,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
       tre.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { i = tre.getAttribute('id')
+) => { i = tre.getAttribute('id'), console.log(i)
   if (li.o == 'up')
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcx[+i[1]]})`)
   } )}
