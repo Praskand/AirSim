@@ -66,8 +66,8 @@ stroke-width="1">
 
   move = (l) => { e = d.getElementById(l.o)
     el = d.getElementById(l.i)
-    str = (s = '') => {el.setAttribute('stroke', s)}
-    str(l.c)
+  str = (s = '') => {el.setAttribute('stroke', s)}
+  str(l.c)
     console.log('e, el', e, el)
     // This handler will be executed only once when the cursor
 // moves over
@@ -87,10 +87,12 @@ e.addEventListener(
   // ,false,
 )
 
+// Add an abortable event listener
+controller = new AbortController();
 // Briefly, when the mouse moves off the element
 e.addEventListener(
   "mouseleave",
-  (
+(
   // event
 ) => {
     // mouseleave target
@@ -100,7 +102,7 @@ e.addEventListener(
     // setTimeout(() => {
     //   event.target.style.color = ""
     // }, 1000)
-  }
+  }, { signal: controller.signal }
   // ,false,
 ) }
 if (Math.round(Math.random())) {li = ll} else {li = ul}
@@ -137,7 +139,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
     <rect id='dnp'x="${lg}" y="${bes}" ${wh}/>
     <rect id='dnp'x="${rc - 80}" y="${bes}" ${wh}/>
     <rect id='dnp'x="${cen}" y="${bes}" ${wh}/> </g>` +
-    
+
     `<g fill="transparent">
       <rect x="${vl}" y="${t}" ${wh}/>
       <rect x="${vr}" y="${t}" ${wh}/>
@@ -148,8 +150,14 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
       <rect x="${vl}" y="${lol}" ${wh}/>
       <rect x="${vr}" y="${lol}" ${wh}/>
       <rect x="${cen}" y="${lol}" ${wh}/> </g> </svg> </center>`
-    move(li), d.querySelectorAll('#dnp').forEach(element => {
-      
+    move(li), d.querySelectorAll(li.p).forEach(el => {
+      el.addEventListener(
+  "mousedown", (
+  // event, callback fn
+) => {
+  controller.abort(); // remove listener
+  }
+)
     });
 // s
 
