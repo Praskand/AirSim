@@ -57,20 +57,34 @@ ul = { p: '#upl', o: 'up', i: 'ul', c: 'grey'
 //     alert(this.a + this.b);
 //   }
 }, ll = { p: '#dnp', o: 'dn', i: 'll', c: 'yellow' }, d = document
+
 l = (y, l) =>`<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1">
   <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2 + 1} ${y}h${w/2 - 40}"/> </g>`
 
+  if (Math.round(Math.random())) {li = ll} else {li = ul}
+cen = sw/2 - 40, t = g - 40, tcx = [lg-3*(sca-1), sw/2-(18/2+3)*sca, rc - 22*sca]
+wh = `width="80" height="80"`, lol = sh - g - 40, m = sh/2 - 40, vl = lg - 40, vr = rc - 40
+xco = (l, m, r) => [l - 40, m, r + 40], trcx = xco(tcx[0], tcx[1], tcx[0]), rb = rc - 80
+// trbx = xco(lg, cen, rb)
+trcy = [g, sh/2, sh - g].map(e => e - cly)
+// console.log('trcy, g',trcy, g)
+c = x => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = 'upl' d="M3 13.6493C3 16.6044
+5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
+  19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
+  8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`
+  
   move = (l) => { e = d.getElementById(l.o)
     el = d.getElementById(l.i)
   str = (s = '') => {el.setAttribute('stroke', s)}
   str(l.c)
     // console.log('e, el', e, el)
+// Add an abortable event listener
+controller = new AbortController();
     // This handler will be executed only once when the cursor
 // moves over
 e.addEventListener(
-  "mouseenter",
-  (
+  "mouseenter", (
   // event
 ) => {
     // mouseenter target event
@@ -80,39 +94,21 @@ e.addEventListener(
   //   setTimeout(() => {
   //     event.target.style.color = ""
   //   }, 500)
-  }
+  }, { signal: controller.signal }
   // ,false,
 )
 
-// Add an abortable event listener
-controller = new AbortController();
 // Briefly, when the mouse moves off the element
 e.addEventListener(
-  "mouseleave",
-(
+  "mouseleave", (
   // event
 ) => {
     // mouseleave target
     str(l.c)
 
-    // reset the color after a short delay
-    // setTimeout(() => {
-    //   event.target.style.color = ""
-    // }, 1000)
   }, { signal: controller.signal }
-  // ,false,
 ) }
-if (Math.round(Math.random())) {li = ll} else {li = ul}
-cen = sw/2 - 40, t = g - 40, tcx = [lg-3*(sca-1), sw/2-(18/2+3)*sca, rc - 22*sca]
-wh = `width="80" height="80"`, lol = sh - g - 40, m = sh/2 - 40, vl = lg - 40, vr = rc - 40
-xco = (l, m, r) => [l - 40, m, r + 40], trcx = xco(tcx[0], tcx[1], tcx[0]), rb = rc - 80
-// trbx = xco(lg, cen, rb)
-trcy = [g, sh/2, sh - g].map(e => e - cly)
-console.log('trcy, g',trcy, g)
-c = x => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = 'upl' d="M3 13.6493C3 16.6044
-5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
-  19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
-  8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`
+
 s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
 
@@ -156,6 +152,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
 setAttributes = (el, attrs) => {
     for(var key in attrs) {
       el.setAttribute(key, attrs[key]); } };
+
 // p id
     modo(li.p).forEach(el => {
       el.addEventListener(
@@ -167,18 +164,12 @@ setAttributes = (el, attrs) => {
       tre.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { gat = x => tre.getAttribute(x), i = gat('id'), console.log(i)
+) => { gat = x => tre.getAttribute(x), i = gat('id')
+// console.log(i)
   if (li.o == 'up')
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[+i[1]]}) scale(${sca})`)
   else setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`})
   } )}
 ) }) } )
 // s
-//   setAttributes(s, {'viewBox': `0 0 ${w} ${h}`, 'height':h});
-// setAttribute(p, {'}); s.appendChild(p);
-    // rect.setAttribute('y',5);
-    // rect.setAttribute('width',500);
-    // rect.setAttribute('height',500);
-    // rect.setAttribute('fill','#95B3D7');
-    // d.body.appendChild(s);
 </script> </body> </html> 
