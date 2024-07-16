@@ -106,7 +106,7 @@ if (Math.round(Math.random())) {li = ll} else {li = ul}
 cen = sw/2 - 40, t = g - 40, tcx = [lg-3*(sca-1), sw/2-(18/2+3)*sca, rc - 22*sca]
 wh = `width="80" height="80"`, lol = sh - g - 40, m = sh/2 - 40, vl = lg - 40, vr = rc - 40
 xco = (l, m, r) => [l - 40, m, r + 40], trcx = xco(tcx[0], tcx[1], tcx[0]), rb = rc - 80
-trbx = xco(lg, cen, rb)
+// trbx = xco(lg, cen, rb)
 trcy = [g, sh/2, sh - g].map(e => e - cly)
 console.log('trcy, g',trcy, g)
 c = x => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = 'upl' d="M3 13.6493C3 16.6044
@@ -167,10 +167,10 @@ setAttributes = (el, attrs) => {
       tre.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { i = tre.getAttribute('id'), console.log(i)
+) => { gat = x => tre.getAttribute(x), i = gat('id'), console.log(i)
   if (li.o == 'up')
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcx[+i[1]]}) scale(${sca})`)
-  else setAttributes(el, {'x': `${w}`, 'y':h}trcx[+i[0]]}, ${trcx[+i[1]]}) scale(${sca})`)
+  else setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`})
   } )}
 ) }) } )
 // s
