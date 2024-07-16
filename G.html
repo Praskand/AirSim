@@ -41,16 +41,17 @@
   transform: translate(calc(var(--w)/2));
 } */
 </style> </head>
-<body>
-<script> console.clear(), sh = window.innerHeight, i = 3, wf = (1+1/i), sw = sh/wf, hf = 5/8
+
+<body> <script> console.clear(), sh = window.innerHeight, i = 3, wf = (1+1/i), sw = sh/wf, hf = 5/8
 h = sh*hf
 // 500
 w = h/wf, g = (1-hf)*sh/2, r = sw/40, lg = (1-hf)*sw/2, rc = (1+hf)*sw/2, bes = sh - g/2 - 40
-sca = 4
+sca = 4 // up-pl
 c = `<path id = 'upl' d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21
 14.4969C21 12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
-  8.5C4.8 8.9375 3 11.2001 3 13.6493Z" transform="scale(${sca})"/>`, yc = g/2 - (13/2+5)*sca
+  8.5C4.8 8.9375 3 11.2001 3 13.6493Z" transform="scale(${sca})"/>`, cly = (13/2+5)*sca
+  yc = g/2 - cly
 // `<g stroke="grey" stroke-width="4" fill="black"> <circle cx="${lg + 40}" cy="${g/2}" r="40"/>
 //      <circle cx="${vr}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
@@ -107,8 +108,9 @@ e.addEventListener(
 ) }
 if (Math.round(Math.random())) {li = ll} else {li = ul}
 // console.log('li',li)
-cen = sw/2 - 40, t = g - 40
+cen = sw/2 - 40, t = g - 40, tcx = [lg-3*(sca-1), sw/2-(18/2+3)*sca, rc - 22*sca]
 wh = `width="80" height="80"`, lol = sh - g - 40, m = sh/2 - 40, vl = lg - 40, vr = rc - 40
+trcx = [tcx[0] - 40, tcx[1], tcx[0] + 40], trcy = [g, sh/2, sh - g] - cly
 s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
 
@@ -116,9 +118,9 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
 
     <g id = 'up' stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
     stroke-width="1">
-<g transform="translate(${lg-3*(sca-1)}, ${yc})"> ${c}</g>
-<g transform="translate(${rc - 22*sca}, ${yc})"> ${c} </g>
-<g transform="translate(${sw/2-(18/2+3)*sca}, ${yc})"> ${c} </g> </g>` +
+<g transform="translate(${tcx[0]}, ${yc})"> ${c} </g>
+<g transform="translate(${tcx[2]}, ${yc})"> ${c} </g>
+<g transform="translate(${tcx[1]}, ${yc})"> ${c} </g> </g>` +
 
   `<g transform="translate(${lg}, ${g})" stroke = "red">
     <path d = "M 0 0 h ${w} v ${h} H 0 z l ${w} ${h
@@ -129,7 +131,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
     } ${r
     }z" fill = "black"/>
     <circle cx="${w/2}" cy="${h/2}" r="40" fill="black"/>
-    <circle cx="${w/2}" cy="${h/2}" r="4" fill="red"/> </g> ${l(sh - g/2, ll)}`+
+    <circle cx="${w/2}" cy="${h/2}" r="4" fill="red"/> </g> ${l(sh - g/2, ll)}` +
 
     `<g id='dn' stroke = "yellow" style="opacity:1.0000000;fill:green;
       fill-opacity:1.0000000;fill-rule:evenodd;
@@ -150,7 +152,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
       <rect x="${vl}" y="${lol}" ${wh} id ='tr'/>
       <rect x="${vr}" y="${lol}" ${wh} id ='tr'/>
       <rect x="${cen}" y="${lol}" ${wh} id ='tr'/> </g> </svg> </center>`
-    move(li), modo = (q) => {d.querySelectorAll(q)}
+    move(li), modo = q => d.querySelectorAll(q)
 
     modo(li.p).forEach(el => {
       el.addEventListener(
@@ -162,7 +164,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
       tre.addEventListener(
   "mousedown", (
   // event, callback fn
-) => {
+) => { if li.o == 'up'
   el.setAttribute('stroke', s)
   } )}
 ) }) } )
