@@ -151,7 +151,7 @@ setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
 dq = x => d.querySelector(x)
-i = 0
+ite = 0
       // 3 p ids
  rou = () => { contp = new AbortController(), cont = new AbortController(), modo(li.p).forEach(el => {
       el.addEventListener(
@@ -159,14 +159,14 @@ i = 0
   // event, callback fn
 ) => {
   controller.abort() // remove listener
-  console.log('li1', li, el, i++), k = el
+  console.log('li1', li, el, ite++), k = el
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { console.log('li2', li, el, k, i++)
+) => { console.log('li2', li, el, k, ite++)
 i = gat(tre, 'id')
-console.log('li3', li, el, i++)
+console.log('li3', li, el, ite++)
   if (li.o == 'up') { y = +i[1]; if (y == 2) { dq('svg').append(dq('#up'))
 // remove(), .innerHTML += ue.outerHTML
 }
