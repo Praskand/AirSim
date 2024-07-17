@@ -166,9 +166,11 @@ setAttributes = (el, attrs) => {
 ) => { gat = x => tre.getAttribute(x), i = gat('id')
 // console.log(i)
   if (li.o == 'up') { y = +i[1];
-    el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`)
    if (y == 2) { dq = x => d.querySelector(x), ue = dq('#up')
-  ue.remove(), dq('svg').innerHTML += ue.outerHTML } }
+  ue.append('svg')
+// remove(), dq('svg').innerHTML += ue.outerHTML
+}
+    el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`) }
 else setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`})
   } )}
 ) }) } )
