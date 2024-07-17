@@ -159,12 +159,12 @@ dq = x => d.querySelector(x)
   // event, callback fn
 ) => {
   controller.abort() // remove listener
-  console.log('li1', li, el)
+  console.log('li1', li, el), k = el
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { console.log('li2', li, el)
+) => { console.log('li2', li, el, k)
 i = gat(tre, 'id')
 console.log('li3', li, el)
   if (li.o == 'up') { y = +i[1]; if (y == 2) { dq('svg').append(dq('#up'))
