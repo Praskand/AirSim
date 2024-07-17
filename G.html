@@ -152,7 +152,7 @@ setAttributes = (el, attrs) => {
     el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
 dq = x => d.querySelector(x)
 
-trf = (
+trf = (tre
   // event
   // , callback fn
 ) => {
@@ -183,7 +183,7 @@ ite = 0
 
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
-  "mousedown", ()=>{trf}, { signal: contp.signal } )
+  "mousedown", ()=>{trf(tre)}, { signal: contp.signal } )
   // , console.log('li1', li, el, tre)
   // tre.t = tre
 }
