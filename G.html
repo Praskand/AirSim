@@ -54,8 +54,7 @@ cly = (13/2 + 5)*sca, yc = g/2 - cly
 // 1+hf)*sh/2+40
 ul = { p: '#upl', o: 'up', i: 'ul', c: 'grey'
 // object ,'doStuff': function() {
-//     alert(this.a + this.b);
-//   }
+//     alert(this.a + this.b); }
 }, ll = { p: '#dnp', o: 'dn', i: 'll', c: 'yellow' }, d = document
 
 l = (y, l) =>`<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
@@ -139,7 +138,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
 `<g id = 'up' stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
 
-    `<g id='dn' stroke = "yellow" style="opacity:1.0000000;fill:green;
+  `<g id='dn' stroke = "yellow" style="opacity:1.0000000;fill:green;
       fill-opacity:1.0000000;fill-rule:evenodd;
       stroke-width:4.0000000;stroke-linecap:round;stroke-linejoin:round;
       stroke-miterlimit:4.0000000;
@@ -153,7 +152,7 @@ setAttributes = (el, attrs) => {
     for(var key in attrs) {
       el.setAttribute(key, attrs[key]); } };
 
-// p id
+// 3 p ids
     modo(li.p).forEach(el => {
       el.addEventListener(
   "mousedown", (
@@ -166,8 +165,9 @@ setAttributes = (el, attrs) => {
   // event, callback fn
 ) => { gat = x => tre.getAttribute(x), i = gat('id')
 // console.log(i)
-  if (li.o == 'up')
-    el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[+i[1]]}) scale(${sca})`)
+  if (li.o == 'up') { y = +i[1]; if (y == 2) { dq = x => d.querySelector(x), ue = dq('#up')
+  ue.remove(), dq('svg').innerHTML += ue.outerHTML }
+    el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`) }
   else setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`})
   } )}
 ) }) } )
