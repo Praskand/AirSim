@@ -72,14 +72,14 @@ c = x => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = 'upl' d="M
 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
   8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`
-  
+
+// Add an abortable event listener
+controller = new AbortController();
   move = (l) => { e = d.getElementById(l.o)
     el = d.getElementById(l.i)
   str = (s = '') => {el.setAttribute('stroke', s)}
   str(l.c)
     // console.log('e, el', e, el)
-// Add an abortable event listener
-controller = new AbortController();
     // This handler will be executed only once when the cursor
 // moves over
 e.addEventListener(
@@ -149,16 +149,16 @@ stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
     move(li), modo = q => d.querySelectorAll(q)
 
 setAttributes = (el, attrs) => {
-    for(var key in attrs) {
-      el.setAttribute(key, attrs[key]); } };
-
+  for(var key in attrs) {
+    el.setAttribute(key, attrs[key]); } };
+cont = new AbortController();
 // 3 p ids
     modo(li.p).forEach(el => {
       el.addEventListener(
   "mousedown", (
   // event, callback fn
 ) => {
-  controller.abort(); // remove listener
+  controller.abort() // remove listener
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
   "mousedown", (
@@ -169,8 +169,8 @@ console.log(li)
 // remove(), .innerHTML += ue.outerHTML
 }
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
-else {setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`}), li = ul}; move(li)
-  } ) }
-) } ) } )
+else {setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`}), li = ul}; move(li), cont.abort()
+  } ) }, { signal: cont.signal }
+) } ) }, { signal: cont.signal } )
 // s
 </script> </body> </html> 
