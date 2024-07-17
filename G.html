@@ -165,10 +165,11 @@ setAttributes = (el, attrs) => {
   // event, callback fn
 ) => { gat = x => tre.getAttribute(x), i = gat('id')
 // console.log(i)
-  if (li.o == 'up') { y = +i[1]; if (y == 2) { dq = x => d.querySelector(x), ue = dq('#up')
-  ue.remove(), dq('svg').innerHTML += ue.outerHTML }
+  if (li.o == 'up') { y = +i[1];
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`) }
-  else setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`})
+   if (y == 2) { dq = x => d.querySelector(x), ue = dq('#up')
+  ue.remove(), dq('svg').innerHTML += ue.outerHTML }
+else setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`})
   } )}
 ) }) } )
 // s
