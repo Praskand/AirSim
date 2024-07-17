@@ -47,7 +47,7 @@ h = sh*hf
 // 500
 w = h/wf, g = (1-hf)*sh/2, r = sw/40, lg = (1-hf)*sw/2, rc = (1+hf)*sw/2, bes = sh - g/2 - 40
 sca = 4 // up-pl
-cly = (13/2 + 5 + 1)*sca, yc = g/2 - cly
+cly = (13/2 + 5)*sca, yc = g/2 - cly
 // `<g stroke="grey" stroke-width="4" fill="black"> <circle cx="${lg + 40}" cy="${g/2}" r="40"/>
 //      <circle cx="${vr}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
@@ -67,7 +67,7 @@ cen = sw/2 - 40, t = g - 40, tcx = [lg-3*(sca-1), sw/2-(18/2+3)*sca, rc - 22*sca
 wh = `width="80" height="80"`, lol = sh - g - 40, m = sh/2 - 40, vl = lg - 40, vr = rc - 40
 xco = (l, m, r) => [l - 40, m, r + 40], trcx = xco(tcx[0], tcx[1], tcx[2]), rb = rc - 80
 // trbx = xco(lg, cen, rb)
-trcy = [g, sh/2, sh - g].map(e => e - cly)
+trcy = [g, sh/2, sh - g].map(e => e - cly - sca)
 // console.log('trcy, g',trcy, g)
 c = x => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = 'upl' d="M3 13.6493C3 16.6044
 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
