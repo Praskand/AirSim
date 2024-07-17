@@ -165,14 +165,12 @@ setAttributes = (el, attrs) => {
   // event, callback fn
 ) => { gat = x => tre.getAttribute(x), i = gat('id')
 // console.log(i)
-  if (li.o == 'up') { y = +i[1];
-   if (y == 2) { dq = x => d.querySelector(x), ue = dq('#up')
-  ue.append('svg')
-// remove(), dq('svg').innerHTML += ue.outerHTML
+  if (li.o == 'up') { y = +i[1]; if (y == 2) { dq = x => d.querySelector(x), dq('svg').append(dq('#up'))
+// remove(), .innerHTML += ue.outerHTML
 }
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`) }
 else setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`})
-  } )}
-) }) } )
+  } ) }
+) } ) } )
 // s
 </script> </body> </html> 
