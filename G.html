@@ -79,7 +79,7 @@ controller = new AbortController();
     el = d.getElementById(l.i)
   str = (s = '') => {el.setAttribute('stroke', s)}
   str(l.c)
-    // console.log('e, el', e, el)
+    console.log('controller', controller)
     // This handler will be executed only once when the cursor
 // moves over
 e.addEventListener(
@@ -152,8 +152,8 @@ setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]); } };
 cont = new AbortController();
-// 3 p ids
-    modo(li.p).forEach(el => {
+      // 3 p ids
+ rou = () => modo(li.p).forEach(el => {
       el.addEventListener(
   "mousedown", (
   // event, callback fn
@@ -170,7 +170,8 @@ console.log(li)
 }
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
 else {setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`}), li = ul}; move(li), cont.abort()
+rou()
   } ) }, { signal: cont.signal }
 ) } ) }, { signal: cont.signal } )
-// s
+rou()
 </script> </body> </html> 
