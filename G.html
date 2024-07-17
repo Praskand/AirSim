@@ -78,7 +78,7 @@ c = x => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = 'upl' d="M
   str(l.c)
 // Add an abortable event listener
 controller = new AbortController();
-    console.log('controller', controller)
+    // console.log('controller', controller)
     // This handler will be executed only once when the cursor
 // moves over
 e.addEventListener(
@@ -149,7 +149,8 @@ stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
 
 setAttributes = (el, attrs) => {
   for(var key in attrs) {
-    el.setAttribute(key, attrs[key]); } };
+    el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
+dq = x => d.querySelector(x)
 
       // 3 p ids
  rou = () => { cont = new AbortController(), modo(li.p).forEach(el => {
@@ -162,14 +163,14 @@ setAttributes = (el, attrs) => {
       tre.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { gat = x => tre.getAttribute(x), i = gat('id')
+) => { i = gat(tre, 'id')
 console.log(li)
-  if (li.o == 'up') { y = +i[1]; if (y == 2) { dq = x => d.querySelector(x), dq('svg').append(dq('#up'))
+  if (li.o == 'up') { y = +i[1]; if (y == 2) { dq('svg').append(dq('#up'))
 // remove(), .innerHTML += ue.outerHTML
 }
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
-else {setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`}), li = ul}; move(li), cont.abort()
-rou()
+else {setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul}; move(li)
+cont.abort(), rou()
   } ) }, { signal: cont.signal }
 ) } ) }, { signal: cont.signal } ) }
 rou()
