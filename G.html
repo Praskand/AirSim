@@ -153,7 +153,7 @@ setAttributes = (el, attrs) => {
 dq = x => d.querySelector(x)
 
       // 3 p ids
- rou = () => { cont = new AbortController(), modo(li.p).forEach(el => {
+ rou = () => { contp = new AbortController(), cont = new AbortController(), modo(li.p).forEach(el => {
       el.addEventListener(
   "mousedown", (
   // event, callback fn
@@ -172,8 +172,8 @@ console.log('li3', li, el)
 }
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
 else {setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul}; move(li)
-cont.abort(), rou()
-  } ) }, { signal: cont.signal }
+contp.abort(), cont.abort(), rou()
+  } ) }, { signal: contp.signal }
 ) } ) }, { signal: cont.signal } ) }
 rou()
 </script> </body> </html> 
