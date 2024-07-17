@@ -153,9 +153,11 @@ setAttributes = (el, attrs) => {
 dq = x => d.querySelector(x)
 
 trf = (
-  event
+  // event
   // , callback fn
-) => { tre = event.currentTarget.tre, console.log('li2', li, el, k, tre)
+) => {
+  // tre = event.currentTarget.tre
+  console.log('li2', li, el, k, tre)
 i = gat(tre, 'id')
 console.log('li3', li, el, ite++)
   if (li.o == 'up') { y = +i[1]; if (y == 2) { dq('svg').append(dq('#up'))
@@ -181,8 +183,10 @@ ite = 0
 
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
-  "mousedown", trf, { signal: contp.signal } ), console.log('li1', li, el, tre)
-  tre.t = tre }
+  "mousedown", ()=>{trf}, { signal: contp.signal } )
+  // , console.log('li1', li, el, tre)
+  // tre.t = tre
+}
 ) } ) }, { signal: cont.signal } ) }
 rou()
 </script> </body> </html> 
