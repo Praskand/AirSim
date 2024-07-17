@@ -125,6 +125,17 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
     <circle cx="${w/2}" cy="${h/2}" r="40" fill="black"/>
     <circle cx="${w/2}" cy="${h/2}" r="4" fill="red"/> </g> ${l(sh - g/2, ll)}` +
 
+    `<g fill="transparent" id ='tr'>
+      <rect x="${vl}" y="${t}" ${wh} id ='00'/>
+      <rect x="${vr}" y="${t}" ${wh} id ='20'/>
+      <rect x="${cen}" y="${t}" ${wh} id ='10'/>
+      <rect x="${vl}" y="${m}" ${wh} id ='01'/>
+      <rect x="${vr}" y="${m}" ${wh} id ='21'/>
+      <rect x="${cen}" y="${m}" ${wh} id ='11'/>
+      <rect x="${vl}" y="${lol}" ${wh} id ='02'/>
+      <rect x="${vr}" y="${lol}" ${wh} id ='22'/>
+      <rect x="${cen}" y="${lol}" ${wh} id ='12'/> </g>` +
+
 `<g id = 'up' stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
 
@@ -135,18 +146,7 @@ stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000">
     <rect id='dnp'x="${lg}" y="${bes}" ${wh}/>
     <rect id='dnp'x="${rb}" y="${bes}" ${wh}/>
-    <rect id='dnp'x="${cen}" y="${bes}" ${wh}/> </g>` +
-
-    `<g fill="transparent" id ='tr'>
-      <rect x="${vl}" y="${t}" ${wh} id ='00'/>
-      <rect x="${vr}" y="${t}" ${wh} id ='20'/>
-      <rect x="${cen}" y="${t}" ${wh} id ='10'/>
-      <rect x="${vl}" y="${m}" ${wh} id ='01'/>
-      <rect x="${vr}" y="${m}" ${wh} id ='21'/>
-      <rect x="${cen}" y="${m}" ${wh} id ='11'/>
-      <rect x="${vl}" y="${lol}" ${wh} id ='02'/>
-      <rect x="${vr}" y="${lol}" ${wh} id ='22'/>
-      <rect x="${cen}" y="${lol}" ${wh} id ='12'/> </g> </svg> </center>`
+    <rect id='dnp'x="${cen}" y="${bes}" ${wh}/> </g> </svg> </center>`
     move(li), modo = q => d.querySelectorAll(q)
 
 setAttributes = (el, attrs) => {
