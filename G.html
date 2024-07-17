@@ -152,8 +152,9 @@ setAttributes = (el, attrs) => {
     el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
 dq = x => d.querySelector(x)
 ite = 0
-  // contp = new AbortController(),
+  contp = new AbortController(),
   cont = new AbortController()
+
       // 3 p ids
  rou = () => { modo(li.p).forEach(el => {
       el.addEventListener(
@@ -175,9 +176,9 @@ console.log('li3', li, el, ite++)
 }console.log('liu', li, el, k, ite++)
     k.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
 else {setAttributes(k, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul}; move(li)
-// contp.abort(),
+contp.abort(),
 cont.abort(), rou()
-  } ) }, { signal: cont.signal }
+  } ) }, { signal: contp.signal }
 ) } ) }, { signal: cont.signal } ) }
 rou()
 </script> </body> </html> 
