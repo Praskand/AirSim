@@ -150,9 +150,9 @@ stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
 setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]); } };
+
       // 3 p ids
- rou = () => modo(li.p).forEach(el => {
-cont = new AbortController();
+ rou = () => { cont = new AbortController(), modo(li.p).forEach(el => {
       el.addEventListener(
   "mousedown", (
   // event, callback fn
@@ -171,6 +171,6 @@ console.log(li)
 else {setAttributes(el, {'x': `${gat('x')}`, 'y': `${gat('y')}`}), li = ul}; move(li), cont.abort()
 rou()
   } ) }, { signal: cont.signal }
-) } ) }, { signal: cont.signal } )
+) } ) }, { signal: cont.signal } ) }
 rou()
 </script> </body> </html> 
