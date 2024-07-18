@@ -52,10 +52,10 @@ cly = (13/2 + 5)*sca, yc = g/2 - cly
 //      <circle cx="${vr}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // 1+hf)*sh/2+40
-ul = { o: '#up', p: ' > path', i: '#ul', c: 'grey'
+ul = { o: '#up', p: ' > path', i: 'ul', c: 'grey'
 // object ,'doStuff': function() {
 //     alert(this.a + this.b); }
-}, ll = { o: '#dn', p: ' > rect', i: '#ll', c: 'yellow' }, d = document
+}, ll = { o: '#dn', p: ' > rect', i: 'll', c: 'yellow' }, d = document
 
 l = (y, l) => `<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1">
@@ -73,7 +73,8 @@ c = (x, i) => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = '${i}
 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
   8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`, dq = x => d.querySelector(x)
-  move = (l) => { e = dq(l.o), el = dq(l.i)
+
+  move = (l) => { e = dq(l.o), el = dq('#' + l.i)
   str = (s = '') => {el.setAttribute('stroke', s)}
   str(l.c)
 // Add an abortable event listener
