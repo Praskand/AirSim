@@ -169,11 +169,11 @@ contp.abort(),
 cont.abort(), rou()
   }
 ite = 0
-  contp = new AbortController(),
-  cont = new AbortController()
 
       // 3 p ids
- rou = () => { modo(li.p).forEach(el => {
+ rou = () => {
+  contp = new AbortController(),
+  cont = new AbortController(), modo(li.p).forEach(el => {
       el.addEventListener(
   "mousedown", (
   // event, callback fn
