@@ -170,16 +170,17 @@ cont.abort(), rou()
   }
 ite = 0
 
-      // 3 p ids
  rou = () => {
-  contp = new AbortController(),
-  cont = new AbortController(), modo(li.p).forEach(el => {
+  contp = new AbortController()
+  cont = new AbortController()
+  // 3 p ids
+  modo(li.p).forEach(el => {
       el.addEventListener(
   "mousedown", (
   // event, callback fn
 ) => {
   controller.abort() // remove listener
-  console.log('li1', li, el, ite++), k = el
+  k = el, console.log('li1', li, el, k)
 
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
