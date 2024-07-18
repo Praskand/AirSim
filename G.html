@@ -167,10 +167,12 @@ console.log('liu', li, el, k)
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
 else {
   console.log('lid', li, el, k)
-  setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul}; move(li)
+  setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul}; nto(() => {move(li)})
 contp.abort(),
 cont.abort(), rou()
   }
+
+  nto = (a = () => {}) => { if (li.u != 2) a()}
 
 ite = 0
 
@@ -182,10 +184,10 @@ ite = 0
       el.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { ei = el.id; if (li.u != 2) if (ei != 'm') {k = `#${li.i}`; if (li.u) k += ` > #${ei}`
-  dq(k).remove()}
+) => { nto(() => { if (el.id  != 'm') {k = `#${li.i}`; if (li.u) k += ` > #${el.id}`, dq(k).remove()
+  li.u++
   controller.abort() // remove listener
-  k = el, console.log('li1', li, el, k)
+} } ), k = el, console.log('li1', li, el, k)
 
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
