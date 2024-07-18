@@ -70,6 +70,7 @@ xco = (l, m, r) => [l - 40, m, r + 40], trcx = xco(tcx[0], tcx[1], tcx[2]), rb =
 trcy = [g, sh/2, sh - g].map(e => e - cly - sca)
 // console.log('trcy, g',trcy, g)
 // <g id = 'up'> </g>
+// <g id='dn' > </g> 
 
 c = (x, i) => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = '${i}' stroke="grey"
 fill="black" stroke-linecap="round" stroke-linejoin="round"
@@ -77,8 +78,14 @@ stroke-width="1"d="M3 13.6493C3 16.6044
 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
   8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`, dq = x => d.querySelector(x)
+ye = (x, i) => `<rect id='${i}' stroke = "yellow" style="opacity:1.0000000;fill:green;
+      fill-opacity:1.0000000;fill-rule:evenodd;
+      stroke-width:4.0000000;stroke-linecap:round;stroke-linejoin:round;
+      stroke-miterlimit:4.0000000;
+      stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000" x="${x}" y="${bes}"
+      ${wh}/>`
 
-  move = (l) => { e = dq(l.o), el = dq('#' + l.i)
+      move = (l) => { e = dq(l.o), el = dq('#' + l.i)
   str = (s = '') => {el.setAttribute('stroke', s)}
   str(l.c)
 // Add an abortable event listener
@@ -141,14 +148,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
 
 `${c(tcx[0], 'l')} ${c(tcx[2], 'r')} ${c(tcx[1], 'm')}` +
 
-  `<g id='dn' stroke = "yellow" style="opacity:1.0000000;fill:green;
-      fill-opacity:1.0000000;fill-rule:evenodd;
-      stroke-width:4.0000000;stroke-linecap:round;stroke-linejoin:round;
-      stroke-miterlimit:4.0000000;
-      stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000">
-    <rect id='l'x="${lg}" y="${bes}" ${wh}/>
-    <rect id='r'x="${rb}" y="${bes}" ${wh}/>
-    <rect id='m'x="${cen}" y="${bes}" ${wh}/> </g> </svg> </center>`
+  `${ye(lg, 'l')} ${ye(rb, 'r')} ${ye(cen, 'm')} </svg> </center>`
     move(li), modo = q => d.querySelectorAll(q)
 
 setAttributes = (el, attrs) => {
