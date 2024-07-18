@@ -52,10 +52,10 @@ cly = (13/2 + 5)*sca, yc = g/2 - cly
 //      <circle cx="${vr}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // 1+hf)*sh/2+40
-ul = { p: '#up > path', o: 'up', i: 'ul', c: 'grey'
+ul = { o: '#up', p: ' > path', i: '#ul', c: 'grey'
 // object ,'doStuff': function() {
 //     alert(this.a + this.b); }
-}, ll = { p: '#dn > rect', o: 'dn', i: 'll', c: 'yellow' }, d = document
+}, ll = { o: '#dn', p: ' > rect', i: '#ll', c: 'yellow' }, d = document
 
 l = (y, l) => `<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1">
@@ -72,9 +72,8 @@ trcy = [g, sh/2, sh - g].map(e => e - cly - sca)
 c = (x, i) => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = '${i}' d="M3 13.6493C3 16.6044
 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
-  8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`
-  move = (l) => { e = d.getElementById(l.o)
-    el = d.getElementById(l.i)
+  8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`, dq = x => d.querySelector(x)
+  move = (l) => { e = dq(l.o), el = dq(l.i)
   str = (s = '') => {el.setAttribute('stroke', s)}
   str(l.c)
 // Add an abortable event listener
@@ -151,7 +150,6 @@ stroke-width="1"> ${c(tcx[0], 'l')} ${c(tcx[2], 'm')} ${c(tcx[1], 'r')} </g>` +
 setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
-dq = x => d.querySelector(x)
 
 trf = (tre, el
   // event
@@ -159,7 +157,7 @@ trf = (tre, el
 ) => {
   // tre = event.currentTarget.tre
   // console.log('li2', li, el, tre, k)
-i = gat(tre, 'id')
+i = tre.id
 // console.log('li3', li, el, k)
   if (li.o == 'up') { y = +i[1]; if (y == 2) { dq('svg').append(dq('#up'))
 // remove(), .innerHTML += ue.outerHTML
@@ -181,7 +179,7 @@ ite = 0
       el.addEventListener(
   "mousedown", (
   // event, callback fn
-) => {
+) => { ei = el.id; if (ei != 'm') dq(li.o + ` > ${ei}`).remove()
   controller.abort() // remove listener
   // k = el, console.log('li1', li, el, k)
 
