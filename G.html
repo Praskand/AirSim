@@ -87,14 +87,14 @@ ye = (x, i) => `<rect class='dn' id='${i}' stroke = "yellow" style="opacity:1.00
 
 str = (s = '') => {el.setAttribute('stroke', s)}
 
-move = (l) => { e = dq('.' + l.o), el = dq('#' + l.i)
+move = (l) => { el = dq('#' + l.i)
   str(l.c)
 // Add an abortable event listener
 controller = new AbortController();
     // console.log('controller', controller)
     // This handler will be executed only once when the cursor
 // moves over
-e.addEventListener(
+modo('.' + li.o).forEach( e => { e.addEventListener(
   "mouseenter", (
   // event
 ) => {
@@ -118,7 +118,7 @@ e.addEventListener(
     str(l.c)
 
   }, { signal: controller.signal }
-) }
+) } ) }
 
 s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
@@ -181,7 +181,7 @@ cont.abort(), rou()
 
   nto = (li, a = () => {}) => { if (li.u != 2) a()}
 
-ite = 0
+ite = 0, mo = "mousedown"
 
  rou = () => {
   // contp = new AbortController()
@@ -189,7 +189,7 @@ ite = 0
   // 3 p ids + li.p
   modo('.' + li.o).forEach(el => {
       el.addEventListener(
-  "mousedown", (
+  mo, (
   // event, callback fn, line
 ) => { eap(), nto(li, () => { if (el.id  != 'm') {k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
   dq(k).remove()} li.u++
@@ -199,12 +199,10 @@ ite = 0
 
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
-  "mousedown", () => {
+  mo, () => {
     // console.log('lim2', li, el, k)
-    trf(tre, el)}, { signal: cont.signal } )
+    trf(tre, el) }, { signal: cont.signal } )
   // , console.log('li1', li, el, tre)
   // tre.t = tre
-}
-) }, { signal: cont.signal } ) } ) }
-rou()
+} ) }, { signal: cont.signal } ) } ) }, rou()
 </script> </body> </html> 
