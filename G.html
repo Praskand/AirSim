@@ -52,14 +52,15 @@ cly = (13/2 + 5)*sca, yc = g/2 - cly
 //      <circle cx="${vr}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // 1+hf)*sh/2+40
-ul = { p: '#upl', o: 'up', i: 'ul', c: 'grey'
+ul = { p: '#up > path', o: 'up', i: 'ul', c: 'grey'
 // object ,'doStuff': function() {
 //     alert(this.a + this.b); }
-}, ll = { p: '#dnp', o: 'dn', i: 'll', c: 'yellow' }, d = document
+}, ll = { p: '#dn > rect', o: 'dn', i: 'll', c: 'yellow' }, d = document
 
-l = (y, l) =>`<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
+l = (y, l) => `<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1">
-  <path d="M${lg + 40} ${y}h${w/2 - 40}"/> <path d="M${sw/2 + 1} ${y}h${w/2 - 40}"/> </g>`
+  <path id='l' d="M${lg + 40} ${y}h${w/2 - 40}"/> <path id='r' d="M${sw/2 + 1} ${y}h${w/2 - 40}"/>
+  </g>`
 
   if (Math.round(Math.random())) {li = ll} else {li = ul}
 cen = sw/2 - 40, t = g - 40, tcx = [lg-3*(sca-1), sw/2-(18/2+3)*sca, rc - 22*sca]
@@ -68,7 +69,7 @@ xco = (l, m, r) => [l - 40, m, r + 40], trcx = xco(tcx[0], tcx[1], tcx[2]), rb =
 // trbx = xco(lg, cen, rb)
 trcy = [g, sh/2, sh - g].map(e => e - cly - sca)
 // console.log('trcy, g',trcy, g)
-c = x => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = 'upl' d="M3 13.6493C3 16.6044
+c = (x, i) => `<path transform="translate(${x}, ${yc}) scale(${sca})" id = '${i}' d="M3 13.6493C3 16.6044
 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
   8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`
@@ -135,16 +136,16 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
       <rect x="${cen}" y="${lol}" ${wh} id ='12'/> </g>` +
 
 `<g id = 'up' stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
-stroke-width="1"> ${c(tcx[0])} ${c(tcx[2])} ${c(tcx[1])} </g>` +
+stroke-width="1"> ${c(tcx[0], 'l')} ${c(tcx[2], 'm')} ${c(tcx[1], 'r')} </g>` +
 
   `<g id='dn' stroke = "yellow" style="opacity:1.0000000;fill:green;
       fill-opacity:1.0000000;fill-rule:evenodd;
       stroke-width:4.0000000;stroke-linecap:round;stroke-linejoin:round;
       stroke-miterlimit:4.0000000;
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000">
-    <rect id='dnp'x="${lg}" y="${bes}" ${wh}/>
-    <rect id='dnp'x="${rb}" y="${bes}" ${wh}/>
-    <rect id='dnp'x="${cen}" y="${bes}" ${wh}/> </g> </svg> </center>`
+    <rect id='l'x="${lg}" y="${bes}" ${wh}/>
+    <rect id='r'x="${rb}" y="${bes}" ${wh}/>
+    <rect id='m'x="${cen}" y="${bes}" ${wh}/> </g> </svg> </center>`
     move(li), modo = q => d.querySelectorAll(q)
 
 setAttributes = (el, attrs) => {
@@ -157,14 +158,15 @@ trf = (tre, el
   // , callback fn
 ) => {
   // tre = event.currentTarget.tre
-  console.log('li2', li, el, k, tre)
+  // console.log('li2', li, el, tre, k)
 i = gat(tre, 'id')
-console.log('li3', li, el, k)
+// console.log('li3', li, el, k)
   if (li.o == 'up') { y = +i[1]; if (y == 2) { dq('svg').append(dq('#up'))
 // remove(), .innerHTML += ue.outerHTML
-} console.log('liu', li, el, k, ite++)
-    k.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
-else {setAttributes(k, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul}; move(li)
+}
+// console.log('liu', li, el, k)
+    el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
+else {setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul}; move(li)
 contp.abort(),
 cont.abort(), rou()
   }
@@ -181,11 +183,13 @@ ite = 0
   // event, callback fn
 ) => {
   controller.abort() // remove listener
-  k = el, console.log('li1', li, el, k)
+  // k = el, console.log('li1', li, el, k)
 
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
-  "mousedown", ()=>{console.log('lim2', li, el, k), trf(tre, el)}, { signal: contp.signal } )
+  "mousedown", ()=>{
+    // console.log('lim2', li, el, k)
+    trf(tre, el)}, { signal: contp.signal } )
   // , console.log('li1', li, el, tre)
   // tre.t = tre
 }
