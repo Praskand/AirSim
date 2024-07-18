@@ -162,12 +162,12 @@ trf = (tre, el
   // console.log('li2', li, el, tre, k)
 i = tre.id
 // console.log('li3', li, el, k)
-  y = +i[1]; if (li.o == '#up') { if (y == 2) { eap()
-// remove(), .innerHTML += ue.outerHTML
-}
+  y = +i[1]; if (li.o == '#up') {
+  //  if (y == 2)  eap()
 // console.log('liu', li, el, k)
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll }
-else { if (y == 0) eap()
+else {
+  // if (y == 0) eap()
   // console.log('lid', li, el, k)
   setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul }
   nto(li, () => {move(li)})
@@ -187,7 +187,7 @@ ite = 0
       el.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { nto(li, () => { if (el.id  != 'm') {k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
+) => { eap(), nto(li, () => { if (el.id  != 'm') {k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
   dq(k).remove()} li.u++
   controller.abort() // remove listener
  } ), k = el, console.log('li1', li, el, k)
