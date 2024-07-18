@@ -85,8 +85,9 @@ ye = (x, i) => `<rect class='dn' id='${i}' stroke = "yellow" style="opacity:1.00
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000" x="${x}" y="${bes}"
       ${wh}/>`
 
-move = (l) => { e = dq(l.o), el = dq('#' + l.i) // line
-  str = (s = '') => {el.setAttribute('stroke', s)}
+str = (s = '') => {el.setAttribute('stroke', s)}
+
+move = (l) => { e = dq('.' + l.o), el = dq('#' + l.i)
   str(l.c)
 // Add an abortable event listener
 controller = new AbortController();
@@ -155,7 +156,7 @@ setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
 
-eap = () => {dq('svg').append(dq(li.o))}
+eap = () => {dq('svg').append(dq('.' + li.o))}
 
 trf = (tre, el
   // event
@@ -174,7 +175,7 @@ else {
   // console.log('lid', li, el, k)
   setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul }
   nto(li, () => {move(li)})
-contp.abort(),
+// contp.abort(),
 cont.abort(), rou()
   }
 
@@ -183,7 +184,7 @@ cont.abort(), rou()
 ite = 0
 
  rou = () => {
-  contp = new AbortController()
+  // contp = new AbortController()
   cont = new AbortController()
   // 3 p ids + li.p
   modo('.' + li.o).forEach(el => {
@@ -200,10 +201,10 @@ ite = 0
       tre.addEventListener(
   "mousedown", () => {
     // console.log('lim2', li, el, k)
-    trf(tre, el)}, { signal: contp.signal } )
+    trf(tre, el)}, { signal: cont.signal } )
   // , console.log('li1', li, el, tre)
   // tre.t = tre
 }
-) } ) }, { signal: cont.signal } ) }
+) }, { signal: cont.signal } ) } ) }
 rou()
 </script> </body> </html> 
