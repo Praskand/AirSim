@@ -51,11 +51,11 @@ cly = (13/2 + 5)*sca, yc = g/2 - cly
 // `<g stroke="grey" stroke-width="4" fill="black"> <circle cx="${lg + 40}" cy="${g/2}" r="40"/>
 //      <circle cx="${vr}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
-// 1+hf)*sh/2+40
-ul = { o: '#up', p: ' > path', i: 'ul', c: 'grey'
+
+ul = { o: '#up', p: ' > path', i: 'ul', c: 'grey', u: 0
 // object ,'doStuff': function() {
 //     alert(this.a + this.b); }
-}, ll = { o: '#dn', p: ' > rect', i: 'll', c: 'yellow' }, d = document
+}, ll = { o: '#dn', p: ' > rect', i: 'll', c: 'yellow', u: 0 }, d = document
 
 l = (y, l) => `<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1">
@@ -180,7 +180,8 @@ ite = 0
       el.addEventListener(
   "mousedown", (
   // event, callback fn
-) => { ei = el.id; if (ei != 'm') dq(`#${li.i} > #${ei}`).remove()
+) => { ei = el.id; if (li.u != 2) if (ei != 'm') {k = `#${li.i}`; if (li.u) k += ` > #${ei}`
+  dq(k).remove()}
   controller.abort() // remove listener
   k = el, console.log('li1', li, el, k)
 
