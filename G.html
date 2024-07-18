@@ -157,7 +157,7 @@ trf = (tre, el
   // , callback fn
 ) => {
   // tre = event.currentTarget.tre
-  // console.log('li2', li, el, tre, k)
+  console.log('li2', li, el, tre, k)
 i = tre.id
 // console.log('li3', li, el, k)
   if (li.o == 'up') { y = +i[1]; if (y == 2) { dq('svg').append(dq('#up'))
@@ -182,7 +182,7 @@ ite = 0
   // event, callback fn
 ) => { ei = el.id; if (ei != 'm') dq(li.o + ` > #${ei}`).remove()
   controller.abort() // remove listener
-  // k = el, console.log('li1', li, el, k)
+  k = el, console.log('li1', li, el, k)
 
   modo('#tr > rect').forEach(tre => {
       tre.addEventListener(
