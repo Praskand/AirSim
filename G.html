@@ -152,22 +152,24 @@ setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
 
+eap = () => {dq('svg').append(dq(li.o))}
+
 trf = (tre, el
   // event
   // , callback fn
 ) => {
   // tre = event.currentTarget.tre
-  console.log('li2', li, el, tre, k)
+  // console.log('li2', li, el, tre, k)
 i = tre.id
-console.log('li3', li, el, k)
-  if (li.o == '#up') { y = +i[1]; if (y == 2) { dq('svg').append(dq('#up'))
+// console.log('li3', li, el, k)
+  y = +i[1]; if (li.o == '#up') { if (y == 2) { eap()
 // remove(), .innerHTML += ue.outerHTML
 }
-console.log('liu', li, el, k)
-    el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll}
-else {
-  console.log('lid', li, el, k)
-  setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul}
+// console.log('liu', li, el, k)
+    el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll }
+else { if (y == 0) eap()
+  // console.log('lid', li, el, k)
+  setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul }
   nto(li, () => {move(li)})
 contp.abort(),
 cont.abort(), rou()
