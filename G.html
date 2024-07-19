@@ -86,12 +86,12 @@ ye = (x, i) => `<rect class='dn' id='${i}' stroke = "yellow" style="opacity:1.00
       y="${bes}" ${wh}/>`
 
 str = (s = '') => {el.setAttribute('stroke', s)}, modo = q => d.querySelectorAll(q)
-msi = { signal: controller.signal }
 
 move = (l) => { el = dq('#' + l.i)
   str(l.c)
 // Add an abortable event listener
 controller = new AbortController();
+msi = { signal: controller.signal }
     // console.log('controller', controller)
     // This handler will be executed only once when the cursor
 // moves over
@@ -182,11 +182,12 @@ cont.abort(), rou()
 
   nto = (li, a = () => {}) => { if (li.u != 2) a()}
 
-ite = 0, mo = "mousedown", sig = { signal: cont.signal }
+ite = 0, mo = "mousedown"
 
  rou = () => {
   // contp = new AbortController()
   cont = new AbortController()
+  sig = { signal: cont.signal }
   // 3 p ids + li.p
   modo('.' + li.o).forEach(el => {
       el.addEventListener(
