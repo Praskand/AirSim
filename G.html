@@ -56,10 +56,10 @@ ar = (r, c) => Array(r).fill().map(() => Array(c).fill(0)), z = [0, 0]
 ve = { u: 0, 'l': z, 'm': z, 'r': z
   // , v: 'lmr'
 }
-ul = { o: 'up', p: ' > path', i: 'ul', c: 'grey', ...ve
+ul = { o: 'up', p: 'path', i: 'ul', c: 'grey', ...ve
 // object ,'doStuff': function() {
 //     alert(this.a + this.b); }
-}, ll = { o: 'dn', p: ' > rect', i: 'll', c: 'yellow', ...ve }, d = document
+}, ll = { o: 'dn', p: 'rect', i: 'll', c: 'yellow', ...ve }, d = document
 
 l = (y, l) => `<g id = '${l.i}' stroke="" stroke-linecap="round" stroke-linejoin="round"
 stroke-width="1">
@@ -131,8 +131,8 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
     <path id='0' class='0' d="M0 0h${w}"/> <path id='infinity' class='2' d="M${w} 0v${h}"/>
     <path id='0' class='2' d="M${w} ${h}H0"/>
     <path id='infinity' class='0' d="M0 0v${h}"/>
-    <path id='-' d="M0 0l${w} ${h}"/>
-    <path id='+' d=" M0 ${h}L${w} 0"/>
+    <path id='-1' d="M0 0l${w} ${h}"/>
+    <path id='1' d=" M0 ${h}L${w} 0"/>
     <path id='infinity' class='1' d="M${w/2} 0v${h}"/>
     <path id='0' class='1' d="M0 ${h/2}h${w}"/>
     <path d="M0 0h${r} A${r} ${r}, 0, 0, 1, 0 ${r}z M0 ${h} h${r} a${r} ${r}, 0, 0, 0, ${-r} ${-r
@@ -166,8 +166,10 @@ eap = (el) => {dq('svg').append(el
 )}
 // check collinearity with area of triangle
 (li) => { if (li.u == 2) if (!(li['l'][0]*(li['m'][1] - li['r'][0]) -
-  li['l'][1]*(li['m'][0] - 1) + li['m'][0] - li['r'][1]))
-  Math.atan((li['m'][1] - li['r'][1]) / (li['m'][0] - li['r'][0])) == 0 }
+  li['l'][1]*(li['m'][0] - 1) + li['m'][0] - li['r'][1])) {
+  m = Math.atan((li['m'][1] - li['r'][1]) / (li['m'][0] - li['r'][0]))
+  k = m == 0 ? y : m == Infinity ? x : -1 , k = k != -1 ? `[class=${k}]` : ''
+  dq(`${li.p}[id=${m}]${k}`).setAttribute('stroke', li.c) } }
 
 trf = (tre, el
   // event
