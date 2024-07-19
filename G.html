@@ -187,12 +187,14 @@ else {
   setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li[el.id] = [x, y], li = ul
   arr[x][y] = 2 }
 
-  nto(li, () => { move(li), () => {} } )
+  nto(li, () => { move(li), () => { if (!(li['l'][0]*(li['m'][1] - li['r'][0]) -
+  li['l'][1]*(li['m'][0] - 1) + li['m'][0] - li['r'][1]))
+  Math.atan((li['m'][1] - li['r'][1]) / (li['m'][0] - li['r'][0])) == 0 } } )
 // contp.abort(),
 cont.abort(), rou()
   } }
 
-  nto = (li, a = () => {}, e = () => {}) => { if (li.u != 2) a(); else e()}
+  nto = (li, a = () => {}, e = () => {}) => { (li.u != 2) ? a() : e() }
 
 ite = 0, mo = mou + "down"
 arr = ar(3, 3)
