@@ -85,7 +85,7 @@ ye = (x, i) => `<rect class='dn' id='${i}' stroke = "yellow" style="opacity:1.00
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000" x="${x}" y="${bes}"
       ${wh}/>`
 
-str = (s = '') => {el.setAttribute('stroke', s)}
+str = (s = '') => {el.setAttribute('stroke', s)}, modo = q => d.querySelectorAll(q)
 
 move = (l) => { el = dq('#' + l.i)
   str(l.c)
@@ -150,7 +150,7 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
 `${c(tcx[0], 'l')} ${c(tcx[2], 'r')} ${c(tcx[1], 'm')}` +
 
   `${ye(lg, 'l')} ${ye(rb, 'r')} ${ye(cen, 'm')} </svg> </center>`
-    move(li), modo = q => d.querySelectorAll(q)
+    move(li)
 
 setAttributes = (el, attrs) => {
   for(var key in attrs) {
