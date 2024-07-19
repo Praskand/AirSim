@@ -166,11 +166,11 @@ eap = (el) => {dq('svg').append(el
 )}
 
 // check collinearity with area of triangle
-fin = (li) => { console.log(li); if (li.u == 2) { console.log('2'); if (!(li['l'][0]*(li['m'][1] - li['r'][0]) -
-  li['l'][1]*(li['m'][0] - 1) + li['m'][0] - li['r'][1])) {
+fin = (li) => { console.log(li); if (li.u == 2 && !(li['l'][0]*(li['m'][1] - li['r'][0]) -
+li['l'][1]*(li['m'][0] - 1) + li['m'][0] - li['r'][1])) {
   m = Math.atan((li['m'][1] - li['r'][1]) / (li['m'][0] - li['r'][0]))
   k = m == 0 ? y : m == Infinity ? x : -1 , k = k != -1 ? `[class=${k}]` : ''
-  dq(`${li.p}[id=${m}]${k}`).setAttribute('stroke', li.c) } } else { console.log('r'), rou() } }
+  dq(`${li.p}[id=${m}]${k}`).setAttribute('stroke', li.c) } else { console.log('r'), rou() } }
 
 trf = (tre, el
   // event
