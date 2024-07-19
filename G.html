@@ -85,10 +85,9 @@ fill:green; fill-opacity:1.0000000;fill-rule:evenodd;
       stroke-dasharray:none;stroke-dashoffset:0.00000000;stroke-opacity:1.0000000" x="${x}"
       y="${bes}" ${wh}/>`
 
-str = (s = '') => {el.setAttribute('stroke', s)}, modo = q => d.querySelectorAll(q)
+str = (s = '') => {el.setAttribute('stroke', s)}, modo = q => d.querySelectorAll(q), mou = 'mouse'
 
-move = (l) => { el = dq('#' + l.i)
-  str(l.c)
+move = (l) => { el = dq('#' + l.i), str(l.c)
 // Add an abortable event listener
 controller = new AbortController();
 msi = { signal: controller.signal }
@@ -96,7 +95,7 @@ msi = { signal: controller.signal }
     // This handler will be executed only once when the cursor
 // moves over
 modo('.' + li.o).forEach( e => { e.addEventListener(
-  "mouseenter", (
+  mou+"enter", (
   // event
 ) => {
     // mouseenter target event
@@ -112,14 +111,12 @@ modo('.' + li.o).forEach( e => { e.addEventListener(
 
 // Briefly, when the mouse moves off the element
 e.addEventListener(
-  "mouseleave", (
+  mou + "leave", (
   // event
 ) => {
     // mouseleave target
     str(l.c)
-
-  }, msi
-) } ) }
+  }, msi ) } ) }
 
 s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
   } style=" position: absolute; top:0; bottom: 0; left: 0; right: 0;
@@ -188,7 +185,7 @@ cont.abort(), rou()
 
   nto = (li, a = () => {}) => { if (li.u != 2) a()}
 
-ite = 0, mo = "mousedown"
+ite = 0, mo = mou + "down"
 // Prefilled 2D-Array:
 arr= Array(3).fill().map(() => Array(3).fill(0))
 
