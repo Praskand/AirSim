@@ -86,6 +86,7 @@ ye = (x, i) => `<rect class='dn' id='${i}' stroke = "yellow" style="opacity:1.00
       y="${bes}" ${wh}/>`
 
 str = (s = '') => {el.setAttribute('stroke', s)}, modo = q => d.querySelectorAll(q)
+msi = { signal: controller.signal }
 
 move = (l) => { el = dq('#' + l.i)
   str(l.c)
@@ -105,7 +106,7 @@ modo('.' + li.o).forEach( e => { e.addEventListener(
   //   setTimeout(() => {
   //     event.target.style.color = ""
   //   }, 500)
-  }, { signal: controller.signal }
+  }, msi
   // ,false,
 )
 
@@ -117,7 +118,7 @@ e.addEventListener(
     // mouseleave target
     str(l.c)
 
-  }, { signal: controller.signal }
+  }, msi
 ) } ) }
 
 s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
