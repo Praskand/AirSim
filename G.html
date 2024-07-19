@@ -157,7 +157,9 @@ setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
 
-eap = () => {dq('svg').append(dq('.' + li.o))}
+eap = (el) => {dq('svg').append(el
+// dq('.' + li.o)
+)}
 
 trf = (tre, el
   // event
@@ -168,11 +170,11 @@ trf = (tre, el
 i = tre.id
 // console.log('li3', li, el, k)
   y = +i[1]; if (li.o == 'up') {
-   if (y == 2)  eap()
+   if (y == 2)  eap(el)
 // console.log('liu', li, el, k)
     el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll }
 else {
-  if (y == 0) eap()
+  if (y == 0) eap(el)
   // console.log('lid', li, el, k)
   setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul }
   nto(li, () => {move(li)})
