@@ -169,8 +169,9 @@ trf = (tre, el
   // console.log('li2', li, el, tre, k)
 i = tre.id
 // console.log('li3', li, el, k)
-  x = +i[0], y = +i[1], t = arr[x][y]; if (t) { if (li.o == 'up') {
-   if (y == 2)  eap(el)
+
+  x = +i[0], y = +i[1], t = arr[x][y]; if (!t) { if (li.o == 'up') {
+  if (y == 2)  eap(el)
 // console.log('liu', li, el, k)
     el.setAttribute('transform', `translate(${trcx[x]}, ${trcy[y]}) scale(${sca})`), li = ll
     arr[x][y] = 1 }
