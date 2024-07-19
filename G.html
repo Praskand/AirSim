@@ -164,12 +164,13 @@ setAttributes = (el, attrs) => {
 eap = (el) => {dq('svg').append(el
 // dq('.' + li.o)
 )}
+
 // check collinearity with area of triangle
-(li) => { if (li.u == 2) if (!(li['l'][0]*(li['m'][1] - li['r'][0]) -
+fin = (li) => { if (li.u == 2) if (!(li['l'][0]*(li['m'][1] - li['r'][0]) -
   li['l'][1]*(li['m'][0] - 1) + li['m'][0] - li['r'][1])) {
   m = Math.atan((li['m'][1] - li['r'][1]) / (li['m'][0] - li['r'][0]))
   k = m == 0 ? y : m == Infinity ? x : -1 , k = k != -1 ? `[class=${k}]` : ''
-  dq(`${li.p}[id=${m}]${k}`).setAttribute('stroke', li.c) } }
+  dq(`${li.p}[id=${m}]${k}`).setAttribute('stroke', li.c)} else rou() }
 
 trf = (tre, el
   // event
@@ -180,7 +181,7 @@ trf = (tre, el
 i = tre.id
 // console.log('li3', li, el, k)
 
-  x = +i[0], y = +i[1], t = arr[x][y]; if (!t) { 
+  x = +i[0], y = +i[1], t = arr[x][y]; if (!t) {
   nto(li, () => { if (el.id  != 'm') { k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
   dq(k).remove() } li.u++ } ); if (li.o == 'up') {
   if (y == 2)  eap(el)
@@ -196,13 +197,12 @@ else {
 
   nto(li, () => { move(li) } )
 // contp.abort(),
-cont.abort(), rou()
+cont.abort(), fin(li)
   } }
 
   nto = (li, a = () => {}, e = () => {}) => { if (li.u != 2) a() }
 
-ite = 0, mo = mou + "down"
-arr = ar(3, 3)
+ite = 0, mo = mou + "down", arr = ar(3, 3)
 
  rou = () => {
   // contp = new AbortController()
