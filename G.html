@@ -169,22 +169,27 @@ trf = (tre, el
   // console.log('li2', li, el, tre, k)
 i = tre.id
 // console.log('li3', li, el, k)
-  y = +i[1]; if (li.o == 'up') {
+  x = +i[0], y = +i[1], t = arr[x][y]; if (t) { if (li.o == 'up') {
    if (y == 2)  eap(el)
 // console.log('liu', li, el, k)
-    el.setAttribute('transform', `translate(${trcx[+i[0]]}, ${trcy[y]}) scale(${sca})`), li = ll }
+    el.setAttribute('transform', `translate(${trcx[x]}, ${trcy[y]}) scale(${sca})`), li = ll
+    arr[x][y] = 1 }
+
 else {
   if (y == 0) eap(el)
   // console.log('lid', li, el, k)
-  setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul }
-  nto(li, () => {move(li)})
+  setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li = ul, arr[x][y] = 2 }
+
+  nto(li, () => { move(li) } )
 // contp.abort(),
 cont.abort(), rou()
-  }
+  } }
 
   nto = (li, a = () => {}) => { if (li.u != 2) a()}
 
 ite = 0, mo = "mousedown"
+// Prefilled 2D-Array:
+arr= Array(3).fill().map(() => Array(3).fill(0))
 
  rou = () => {
   // contp = new AbortController()
