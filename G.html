@@ -128,10 +128,11 @@ s = d.body.innerHTML += `<center> <svg viewBox = '0 0 ${sw} ${sh}' height = ${sh
     margin: auto;"> ${l(g/2, ul)}` +
 
   `<g transform="translate(${lg}, ${g})" stroke = "red">
-    <path id='t' d="M0 0h${w}"/> <path id='r' d="M${w} 0v${h}"/> <path id='b' d="M${w} ${h}H0"/>
+    <path id='0' class='0' d="M0 0h${w}"/> <path id='infinity' class='2' d="M${w} 0v${h}"/>
+    <path id='b' d="M${w} ${h}H0"/>
     <path id='l' d="M0 0v${h}"/>
     <path id='-' d="M0 0l${w} ${h}"/>
-    <path id='+' d=" M0 ${h}l${w} 0"/>
+    <path id='+' d=" M0 ${h}L${w} 0"/>
     <path id='|' d="M${w/2} 0v${h}"/>
     <path id='m' d="M0 ${h/2}h${w}"/>
     <path d="M0 0h${r} A${r} ${r}, 0, 0, 1, 0 ${r}z M0 ${h} h${r} a${r} ${r}, 0, 0, 0, ${-r} ${-r
@@ -163,6 +164,10 @@ setAttributes = (el, attrs) => {
 eap = (el) => {dq('svg').append(el
 // dq('.' + li.o)
 )}
+// check collinearity with area of triangle
+(li) => { if (li.u == 2) if (!(li['l'][0]*(li['m'][1] - li['r'][0]) -
+  li['l'][1]*(li['m'][0] - 1) + li['m'][0] - li['r'][1]))
+  Math.atan((li['m'][1] - li['r'][1]) / (li['m'][0] - li['r'][0])) == 0 }
 
 trf = (tre, el
   // event
@@ -187,14 +192,12 @@ else {
   setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li[el.id] = [x, y], li = ul
   arr[x][y] = 2 }
 
-  nto(li, () => { move(li), () => { if (!(li['l'][0]*(li['m'][1] - li['r'][0]) -
-  li['l'][1]*(li['m'][0] - 1) + li['m'][0] - li['r'][1]))
-  Math.atan((li['m'][1] - li['r'][1]) / (li['m'][0] - li['r'][0])) == 0 } } )
+  nto(li, () => { move(li) } )
 // contp.abort(),
 cont.abort(), rou()
   } }
 
-  nto = (li, a = () => {}, e = () => {}) => { (li.u != 2) ? a() : e() }
+  nto = (li, a = () => {}, e = () => {}) => { if (li.u != 2) a() }
 
 ite = 0, mo = mou + "down"
 arr = ar(3, 3)
