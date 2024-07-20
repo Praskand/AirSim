@@ -173,7 +173,7 @@ fin = (l) => { a = li.l[0]*(li.m[1] - li.r[1]) - li.l[1]*(li.m[0] - li.r[0]) + l
   console.log(m)
   if (m == 0) {m = 'i' + m, k =  y} else if (m == Infinity) {k =  x} else {m = 'i' + m, k = -1}
   k = k != -1 ? `.c${k}` : ''
-  dq(`path#${m}${k}`).setAttribute('stroke', li.c) } else { console.log('r'), li = l
+  dq(`path#${m}${k}`).setAttribute('stroke', li.c), cont.abort() } else { console.log('r'), li = l
 
   nto(li, () => { move(li) } ), cont.abort(), rou(l) } }
 
