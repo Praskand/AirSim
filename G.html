@@ -203,7 +203,7 @@ i = tre.id
 console.log('li3', li, el)
 
   x = +i[0], y = +i[1], t = arr[y][x], k = li[el.id], x0 = k[0]; if (!t) {
-    if (x0 != -1) { d2 = Math.pow((k[1] - y), 2) + Math.pow((x0 - x), 2)
+    if (x0 != -1) { d2 = Math.pow((x0 - y), 2) + Math.pow((k[1] - x), 2)
       console.log('d2 k[1] - y x0 - x', d2, k, y,x0, x)
       if (d2 <= 2) { arr[k[1]][x0] = 0, sod(tre, el) } } else sod(tre, el) } }
 
