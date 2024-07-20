@@ -177,18 +177,7 @@ fin = (l) => { if (modo(`.${li.o}.i`).length == 3) {
   k = k != -1 ? `.c${k}` : ''
   dq(`path#${m}${k}`).setAttribute('stroke', li.c), cont.abort() } else est(l) } else est(l) }
 
-trf = (tre, el
-  // event
-  // , callback fn
-) => {
-  console.log('li2', li, el, tre)
-i = tre.id
-console.log('li3', li, el)
-
-  x = +i[0], y = +i[1], t = arr[y][x]
-      k = li[el.id], x0 = k[0]; if (!t) { 
-      if (x0 != -1) arr[k[1]][x0] = 0; Math.pow((k[1] - y), 2) + Math.pow((x0 - x), 2) <= 2
-      if (el.classList[1] == undefined) el.classList.add('i')
+sod = () => { if (el.classList[1] == undefined) el.classList.add('i')
   nto(li, () => { if (el.id  != 'm') { k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
     dq(k).remove() } li.u++ } )
   if (li.o == 'up') { if (y == 2) eap(el)
@@ -199,12 +188,27 @@ console.log('li3', li, el)
 else { if (y == 0) eap(el)
   console.log('lid', li, el)
   setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li[el.id] = [y, x]
-  arr[y][x] = 2, fin(ul) }
+  arr[y][x] = 2, fin(ul) } }
+
+
+trf = (tre, el
+  // event
+  // , callback fn
+) => {
+  console.log('li2', li, el, tre)
+i = tre.id
+console.log('li3', li, el)
+
+  x = +i[0], y = +i[1], t = arr[y][x], k = li[el.id], x0 = k[0]; if (!t) {
+    if (x0 != -1) { if (Math.pow((k[1] - y), 2) + Math.pow((x0 - x), 2) <= 2) {arr[k[1]][x0] = 0
+      sod() } else sod() }
   } }
+
 
 nto = (li, a = () => {}) => { if (li.u != 2) a() }
 
 ite = 0, mo = mou + "down", arr = ar(3, 3)
+
 
  rou = (li) => {
   cont = new AbortController()
