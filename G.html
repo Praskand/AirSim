@@ -180,22 +180,21 @@ trf = (tre, el
   // event
   // , callback fn
 ) => {
-  // tre = event.currentTarget.tre
-  // console.log('li2', li, el, tre, k)
+  console.log('li2', li, el, tre, k)
 i = tre.id
-// console.log('li3', li, el, k)
+console.log('li3', li, el, k)
 
   x = +i[0], y = +i[1], t = arr[y][x]; if (!t) { if (li.b != 3) li.b++
   nto(li, () => { if (el.id  != 'm') { k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
   dq(k).remove() } li.u++ } ); if (li.o == 'up') {
   if (y == 2)  eap(el)
-// console.log('liu', li, el, k)
+console.log('liu', li, el, k)
     el.setAttribute('transform', `translate(${trcx[x]}, ${trcy[y]}) scale(${sca})`)
     li[el.id] = [y, x], arr[y][x] = 1, fin(ll) }
 
 else {
   if (y == 0) eap(el)
-  // console.log('lid', li, el, k)
+  console.log('lid', li, el, k)
   setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li[el.id] = [y, x]
   arr[y][x] = 2, fin(ul) }
 
