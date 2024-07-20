@@ -180,7 +180,7 @@ fin = (l) => { if (modo(`.${li.o}.i`).length == 3) {
 
 nto = (li, a = () => {}) => { if (li.u != 2) a() }
 
-sod = (el) => { if (el.classList[1] == undefined) el.classList.add('i')
+sod = (tre, el) => { if (el.classList[1] == undefined) el.classList.add('i')
   nto(li, () => { if (el.id  != 'm') { k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
     dq(k).remove() } li.u++ } )
   if (li.o == 'up') { if (y == 2) eap(el)
@@ -204,7 +204,7 @@ console.log('li3', li, el)
 
   x = +i[0], y = +i[1], t = arr[y][x], k = li[el.id], x0 = k[0]; if (!t) {
     if (x0 != -1) { if (Math.pow((k[1] - y), 2) + Math.pow((x0 - x), 2) <= 2) { arr[k[1]][x0] = 0
-      sod(el) } } else sod(el)
+      sod(tre, el) } } else sod(tre, el)
   } }
 
 ite = 0, mo = mou + "down", arr = ar(3, 3)
