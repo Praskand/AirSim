@@ -53,7 +53,7 @@ cly = (13/2 + 5)*sca, yc = g/2 - cly
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // Prefilled 2D-Array:
 ar = (r, c) => Array(r).fill().map(() => Array(c).fill(0)), z = [0, 0]
-ve = { u: 0, 'l': z, 'm': z, 'r': z, l: 0
+ve = { u: 0, l: z, m: z, r: z, b: 0
   // , v: 'lmr'
 }
 ul = { o: 'up', p: 'path', i: 'ul', c: 'grey', ...ve
@@ -166,15 +166,15 @@ eap = (el) => {dq('svg').append(el
 )}
 
 // check collinearity with area of triangle
-fin = (li) => { console.log(li); if (li.l == 3 && !(li['l'][0]*(li['m'][1] - li['r'][0]) -
-li['l'][1]*(li['m'][0] - 1) + li['m'][0]*li['r'][1] - li['r'][0]*li['m'][1])) {
+fin = (x) => { console.log(li); if (li.b == 3 && !(li.l[0]*(li.m[1] - li.r[0]) -
+li.l[1]*(li.m[0] - 1) + li.m[0]*li.r[1] - li.r[0]*li.m[1])) {
   m =
-  // Math.atan(
-    (li['m'][1] - li['r'][1]) / (li['m'][0] - li['r'][0])
-  // )
+  Math.abs(
+  // tan(
+    (li.m[1] - li.r[1]) / (li.m[0] - li.r[0]))
   console.log(m)
   k = m == 0 ? y : m == Infinity ? x : -1 , k = k != -1 ? `[class=${k}]` : ''
-  dq(`path[id=${m}]${k}`).setAttribute('stroke', li.c) } else { console.log('r'), rou() } }
+  dq(`path[id=${m}]${k}`).setAttribute('stroke', li.c) } else { console.log('r'), li = x, rou() } }
 
 trf = (tre, el
   // event
@@ -185,23 +185,23 @@ trf = (tre, el
 i = tre.id
 // console.log('li3', li, el, k)
 
-  x = +i[0], y = +i[1], t = arr[y][x]; if (!t) {
+  x = +i[0], y = +i[1], t = arr[y][x]; if (!t) { if (li.b != 3) li.b++
   nto(li, () => { if (el.id  != 'm') { k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
   dq(k).remove() } li.u++ } ); if (li.o == 'up') {
   if (y == 2)  eap(el)
 // console.log('liu', li, el, k)
     el.setAttribute('transform', `translate(${trcx[x]}, ${trcy[y]}) scale(${sca})`)
-    li[el.id] = [y, x], li = ll, arr[y][x] = 1 }
+    li[el.id] = [y, x], arr[y][x] = 1, fin(ll) }
 
 else {
   if (y == 0) eap(el)
   // console.log('lid', li, el, k)
-  setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li[el.id] = [y, x], li = ul
-  arr[y][x] = 2 }
+  setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li[el.id] = [y, x]
+  arr[y][x] = 2, fin(ul) }
 
   nto(li, () => { move(li) } )
 // contp.abort(),
-cont.abort(); if (li.l != 3) li.l++, fin(li)
+cont.abort()
   } }
 
   nto = (li, a = () => {}) => { if (li.u != 2) a() }
