@@ -174,7 +174,9 @@ li.l[1]*(li.m[0] - 1) + li.m[0]*li.r[1] - li.r[0]*li.m[1])) {
     (li.m[1] - li.r[1]) / (li.m[0] - li.r[0]))
   console.log(m)
   k = m == 0 ? y : m == Infinity ? x : -1 , k = k != -1 ? `[class=${k}]` : ''
-  dq(`path[id=${m}]${k}`).setAttribute('stroke', li.c) } else { console.log('r'), li = x, rou(x) } }
+  dq(`path[id=${m}]${k}`).setAttribute('stroke', li.c) } else { console.log('r'), li = x
+
+  nto(li, () => { move(li) } ), cont.abort(), rou(x) } }
 
 trf = (tre, el
   // event
@@ -186,21 +188,16 @@ console.log('li3', li, el)
 
   x = +i[0], y = +i[1], t = arr[y][x]; if (!t) { if (li.b != 3) li.b++
   nto(li, () => { if (el.id  != 'm') { k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
-  dq(k).remove() } li.u++ } ); if (li.o == 'up') {
-  if (y == 2) eap(el)
-console.log('liu', li, el)
+    dq(k).remove() } li.u++ } )
+  if (li.o == 'up') { if (y == 2) eap(el)
+    console.log('liu', li, el)
     el.setAttribute('transform', `translate(${trcx[x]}, ${trcy[y]}) scale(${sca})`)
     li[el.id] = [y, x], arr[y][x] = 1, fin(ll) }
 
-else {
-  if (y == 0) eap(el)
+else { if (y == 0) eap(el)
   console.log('lid', li, el)
   setAttributes(el, {'x': `${gat(tre, 'x')}`, 'y': `${gat(tre, 'y')}`}), li[el.id] = [y, x]
   arr[y][x] = 2, fin(ul) }
-
-  nto(li, () => { move(li) } )
-// contp.abort(),
-cont.abort()
   } }
 
   nto = (li, a = () => {}) => { if (li.u != 2) a() }
