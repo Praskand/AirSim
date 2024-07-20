@@ -166,10 +166,8 @@ eap = (el) => {dq('svg').append(el
 )}
 
 // check collinearity with area of triangle
-fin = (x) => { console.log(li, x); if (li.b == 3 && !(li.l[0]*(li.m[1] - li.r[0]) -
-li.l[1]*(li.m[0] - 1) + li.m[0]*li.r[1] - li.r[0]*li.m[1])) {
-  m =
-  Math.abs(
+fin = (x) => { a = li.l[0]*(li.m[1] - li.r[0]) - li.l[1]*(li.m[0] - 1) + li.m[0]*li.r[1] -
+  li.r[0]*li.m[1], console.log(li, x, a); if (li.b == 3 && !a) { m = Math.abs(
   // tan(
     (li.m[1] - li.r[1]) / (li.m[0] - li.r[0]))
   console.log(m)
