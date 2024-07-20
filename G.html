@@ -52,7 +52,7 @@ cly = (13/2 + 5)*sca, yc = g/2 - cly
 //      <circle cx="${vr}" cy="${g/2}" r="40"/>
 //     <circle cx="${sw/2}" cy="${g/2}" r="40"/> </g>`
 // Prefilled 2D-Array:
-ar = (r, c) => Array(r).fill().map(() => Array(c).fill(0)), z = [0, 0]
+ar = (r, c) => Array(r).fill().map(() => Array(c).fill(0)), z = [-1, 0]
 ve = { u: 0, l: z, m: z, r: z, b: 0
   // , v: 'lmr'
 }
@@ -77,9 +77,9 @@ trcy = [g, sh/2, sh - g].map(e => e - cly - sca)
 // <g id='dn' > </g> 
 
 c = (x, i) => `<path class='up' transform="translate(${x}, ${yc}) scale(${sca})" id = '${i}'
-stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
-stroke-width="1"d="M3 13.6493C3 16.6044
-5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
+  stroke="grey" fill="black" stroke-linecap="round" stroke-linejoin="round"
+  stroke-width="1"d="M3 13.6493C3 16.6044
+  5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503
   19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5
   8.5C4.8 8.9375 3 11.2001 3 13.6493Z"/>`, dq = x => d.querySelector(x)
 ye = (x, i) => `<rect class='dn' id='${i}' stroke = "yellow" style="opacity:1.0000000;
@@ -173,8 +173,8 @@ li.l[1]*(li.m[0] - 1) + li.m[0]*li.r[1] - li.r[0]*li.m[1])) {
   // tan(
     (li.m[1] - li.r[1]) / (li.m[0] - li.r[0]))
   console.log(m)
-  k = m == 0 ? y : m == Infinity ? x : -1 , k = k != -1 ? `[class=${k}]` : ''
-  dq(`path[id=${m}]${k}`).setAttribute('stroke', li.c) } else { console.log('r'), li = x
+  k = m == 0 ? y : m == Infinity ? x : -1 , k = k != -1 ? `.${k}` : ''
+  dq(`path#${m}${k}`).setAttribute('stroke', li.c) } else { console.log('r'), li = x
 
   nto(li, () => { move(li) } ), cont.abort(), rou(x) } }
 
@@ -200,27 +200,27 @@ else { if (y == 0) eap(el)
   arr[y][x] = 2, fin(ul) }
   } }
 
-  nto = (li, a = () => {}) => { if (li.u != 2) a() }
+nto = (li, a = () => {}) => { if (li.u != 2) a() }
 
 ite = 0, mo = mou + "down", arr = ar(3, 3)
 
  rou = (li) => {
-  // contp = new AbortController()
   cont = new AbortController()
   sig = { signal: cont.signal }
+
   // 3 p ids + li.p
   modo('.' + li.o).forEach(el => {
-      el.addEventListener(
-  mo, (
+    el.addEventListener(mo, (
   // event, callback fn, not 2, line
 ) => { eap()
   controller.abort() // remove listener
 //  k = el, console.log('li1', li, el, k)
 
   modo('#tr > rect').forEach(tre => {
-      tre.addEventListener(
-  mo, () => {
+    tre.addEventListener(mo, () => {
     // console.log('lim2', li, el, k)
+      k = li[el.id], x = k[0]
+      if (x != -1) arr[k[1]][x] = 0
     trf(tre, el) }, sig )
   // , console.log('li1', li, el, tre)
   // tre.t = tre
