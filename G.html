@@ -169,7 +169,7 @@ eap = (el) => {
 
 est = (l) => {
   // console.log('r')
-  li = l, nto(li, () => { move(li) } ), cont.abort(), rou(l) }
+  li = l, nto(li, () => { move(li) } ), cont.abort(), contp.abort(), rou(l) }
 
 // check collinearity with area of triangle
 fin = (l) => { if (modo(`.${li.o}.i`).length == 3) {
@@ -180,7 +180,7 @@ fin = (l) => { if (modo(`.${li.o}.i`).length == 3) {
   // console.log(m)
   if (m == 0) {m = 'i' + m, k =  y} else if (m == Infinity) {k =  x} else {m = 'i' + m, k = -1}
   k = k != -1 ? `.c${k}` : ''
-  dq(`path#${m}${k}`).setAttribute('stroke', li.c), cont.abort() } else est(l) } else est(l) }
+  dq(`path#${m}${k}`).setAttribute('stroke', li.c), cont.abort(), contp.abort() } else est(l) } else est(l) }
 
 
 nto = (li, a = () => {}) => { if (li.u != 2) a() }
@@ -215,12 +215,12 @@ i = tre.id
     } else { arr[y0][x0] = 0
       sod(tre, el) } } } else sod(tre, el) } }
 
-mo = mou + "down", arr = ar(3, 3)
+mo = mou + "down", arr = ar(3, 3), t = 0
 
 
  rou = (li) => {
   cont = new AbortController()
-  sig = { signal: cont.signal }
+  contp = new AbortController()
 
   // 3 p ids + li.p
   modo('.' + li.o).forEach(el => {
@@ -229,11 +229,12 @@ mo = mou + "down", arr = ar(3, 3)
 ) => { eap(el)
   controller.abort() // remove listener
 //  k = el, console.log('li1', li, el, k)
-
+contp.abort()
+contp = new AbortController()
   modo('#tr > rect').forEach(tre => {
     tre.addEventListener(mo, () => {
     // console.log('lim2', li, el, k)
-    trf(tre, el) }, sig )
+    trf(tre, el) }, { signal: cont.signal } )
   // , console.log('li1', li, el, tre)
   // tre.t = tre
-} ) }, sig ) } ) }, rou(li) </script> </body> </html>
+} ) }, { signal: contp.signal } ) } ) }, rou(li) </script> </body> </html>
