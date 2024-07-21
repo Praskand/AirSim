@@ -161,11 +161,15 @@ setAttributes = (el, attrs) => {
   for(var key in attrs) {
     el.setAttribute(key, attrs[key]); } }, gat = (el, x) => el.getAttribute(x)
 
-eap = (el) => {console.log(el), dq('svg').append(el
+eap = (el) => {
+  // console.log(el)
+  dq('svg').append(el
 // dq('.' + li.o)
 )}
 
-est = (l) => { console.log('r'), li = l, nto(li, () => { move(li) } ), cont.abort(), rou(l) }
+est = (l) => {
+  // console.log('r')
+  li = l, nto(li, () => { move(li) } ), cont.abort(), rou(l) }
 
 // check collinearity with area of triangle
 fin = (l) => { if (modo(`.${li.o}.i`).length == 3) {
@@ -173,7 +177,7 @@ fin = (l) => { if (modo(`.${li.o}.i`).length == 3) {
   li.r[0]*li.m[1], console.log(li, x, a); if (!a) { m = Math.abs(
   // tan(
     (li.m[0] - li.r[0]) / (li.m[1] - li.r[1]))
-  console.log(m)
+  // console.log(m)
   if (m == 0) {m = 'i' + m, k =  y} else if (m == Infinity) {k =  x} else {m = 'i' + m, k = -1}
   k = k != -1 ? `.c${k}` : ''
   dq(`path#${m}${k}`).setAttribute('stroke', li.c), cont.abort() } else est(l) } else est(l) }
@@ -185,7 +189,7 @@ sod = (tre, el) => { if (el.classList[1] == undefined) el.classList.add('i')
   nto(li, () => { if (el.id  != 'm') { k = `#${li.i}`; if (!li.u) k += ` > #${el.id}`
     dq(k).remove() } li.u++ } )
   if (li.o == 'up') { if (y == 2) eap(el)
-    console.log('liu', li, el)
+    // console.log('liu', li, el)
     el.setAttribute('transform', `translate(${trcx[x]}, ${trcy[y]}) scale(${sca})`)
     li[el.id] = [y, x], arr[y][x] = 1, fin(ll) }
 
@@ -205,9 +209,10 @@ i = tre.id
 
   x = +i[0], y = +i[1], t = arr[y][x], k = li[el.id], x0 = k[0], y0 = k[1], to = x0 - y, b = y0 - x
   if (!t) { if (x0 != -1) { d2 = to*to + b*b
-      console.log('d2 k - y x0 - x', d2, k, y,x0, x)
+      // console.log('d2 k - y x0 - x', d2, k, y,x0, x)
     if (d2 <= 2) { if ((x0 == 1 | y0 == 1) & x0 != y0 & Math.abs(to/b) == 1) {
-      console.log('x0 - x', x0, x) } else { arr[y0][x0] = 0
+      // console.log('x0 - x', x0, x)
+    } else { arr[y0][x0] = 0
       sod(tre, el) } } } else sod(tre, el) } }
 
 mo = mou + "down", arr = ar(3, 3)
