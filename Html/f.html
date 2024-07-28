@@ -7,7 +7,7 @@
 
     <body> <input type=file id=fileSelector>
 
-    <script> console.clear()
+    <script> console.clear(), f = fileSelector.files[0]
       // while (n < l) { .style.backgroundColor='#050', n+=1;}
       
       // function rcol(n, t1) { if(n%2){} else{}}
@@ -20,10 +20,14 @@
 
       // s = screen, m = 'https://Praskand.github.io/AirSim/',
       // d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
-      // a = document.querySelectorAll('p > a'), p = ['AvailableChoicesN.pdf', 'N.pdf'];
+      // a = d.querySelectorAll('p > a'), p = ['AvailableChoicesN.pdf', 'N.pdf'];
       // for(i=0; i< l; i++){ a[i].href = m + p[i]; a[i].textContent = a[i].href;}
       // if(Math.min(s.width, s.height) <=480){
       // for(i=0; i< l; i++){ document.body.style.zoom = "80%"; a[i].href = d + a[i].href;
       //     a[i].textContent = a[i].href;  } l.replace(d+u); else{l.replace(u);}
-      fileSelector.onchange = () => { alert(fileSelector.files[0].size); } </script> </body> </html>
+      fileSelector.onchange = () => { 
+    document.body.innerHTML += `<p style='word-wrap: break-word;'> <a>${f.size}</a> <br><br>
+        <a>${f.lastModified}</a> </p></div>`
+        // alert(f.size)
+        } </script> </body> </html>
   
