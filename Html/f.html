@@ -1,0 +1,70 @@
+<!DOCTYPE html> <html> <head> <link rel="icon" type="image/x-icon" href=
+    "https://avatars.githubusercontent.com/u/95966972?v=4"> <title>Tables</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style> :root {color-scheme: dark;
+     /* --color: #333; */
+    } /* light or dark */
+      table {border-spacing: 1px 0;
+      /*  counter-reset: rowNumber;
+        cell-
+        padding:0;*/
+      }
+      th {padding: 1px 4px}
+      tr:hover td {background:#333}
+      td {text-align: center; padding: 1px 4px} </style></head>
+  
+    <body><div>
+      <h3 class="text-center">
+      <span id="ctl00_lblSubHeader">CCMT Counselling 2024</span> </h3>
+  
+      <div class="contentmiddiv" style="overflow: auto; border-collapse: collapse;">
+      <h4>Total Filled Choice(s) -
+              <span id="ctl00_ContentPlaceHolder1_LabtotChFill" class="badge">7</span> </h4> </div>
+        <p style='word-wrap: break-word;'> <a></a> <br><br>
+          <a></a> </p></div> <input type=file id=fileSelector>
+          
+    <script> console.clear()
+    t = document.querySelectorAll(t1)[0].rows
+    // tr")
+      , n = 1; l = t[1].cells.length;
+      while (n < l) { // dark green
+        document.querySelectorAll(t1)[0].rows[1].cells[n].style.backgroundColor='#050';
+        n+=1;}
+      
+      function rcol(n, t1) { // no loop
+        if(n%2){ document.querySelectorAll(t1)[0].rows[n].style.backgroundColor='#333';} else{
+          document.querySelectorAll(t1)[0].rows[n].style.backgroundColor='#222';}}
+  
+      n = 2, l = t.length, c = 4;
+      while (n < l) { num = parseInt(t[n].children[c].innerHTML);
+        //  console.log(num);
+                   if (num>=340){
+          document.querySelectorAll(
+            // "tr"
+            t1)[0].rows[n].children[c].style.color = '#e00';}
+        document.querySelectorAll(t1)[0].rows[n].innerHTML = '<td>'+(n-1).toString()+'</td> ' + 
+        t[n].innerHTML;
+        rcol(n, t1); n+=1;}
+  
+      n = 1, t1 = ta + "2']", t = document.querySelectorAll(t1)[0].rows, l = t.length;
+      while (n < l) { rcol(n, t1); n+=1; }
+  
+      s = screen, m = 'https://Praskand.github.io/AirSim/',
+      d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
+      // l = location, u = 'https://anuragpaul0.github.io/LT-Codes/Anurag%20Paul%2020EC01045%20ppt.pdf';
+      a = document.querySelectorAll('p > a')
+      // getElementsByTagName('a')
+      , l = a.length, p = ['AvailableChoicesN.pdf', 'N.pdf'];
+      for(i=0; i< l; i++){
+          a[i].href = m + p[i];
+          a[i].textContent = a[i].href;}
+      if(Math.min(s.width, s.height) <=480){
+      for(i=0; i< l; i++){
+          document.body.style.zoom = "80%";
+          a[i].href = d + a[i].href;
+          a[i].textContent = a[i].href;  }
+                                          // l.replace(d+u);
+                                }
+      // else{l.replace(u);}
+      </script> </body> </html>
+  
