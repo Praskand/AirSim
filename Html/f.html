@@ -18,7 +18,7 @@
         g = l.getHours(), k = g >= 12 ? {h:g - 12, a:'P'} : {h:g, a:'A'}
 
     d.querySelector('p').innerHTML += `<a>~ ${(f.size/t**s.n).toFixed(1)} ${s.m}B</a> <br> <br>
-    <a>Last modified date: ${l.setHours(k.h)} ${k.a}M</a>` // alert(f.size)
+    <a>Last modified date: ${new Date(l.setHours(k.h))} ${k.a}M</a>` // alert(f.size)
 
     if (f.type.startsWith("image/")) { img = d.createElement("img");
 // img.classList.add("obj"), img.file = f;
