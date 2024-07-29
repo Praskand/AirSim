@@ -26,8 +26,8 @@
       // for(i=0; i< l; i++){ document.body.style.zoom = "80%"; a[i].href = d + a[i].href;
       //     a[i].textContent = a[i].href;  } l.replace(d+u); else{l.replace(u);}
       fileSelector.onchange = () => { f = fileSelector.files[0]
-    document.body.innerHTML += `<p style='word-wrap: break-word;'> <a>${f.size}</a> <br><br>
-        <a>${f.lastModified}</a> </p></div>`
+    document.body.innerHTML += `<p style='word-wrap: break-word;'> <a>${f.size/1000} KB</a> <br><br>
+        <a>${f.lastModifiedDate}</a> </p></div>`
         // alert(f.size)
         } </script> </body> </html>
   
