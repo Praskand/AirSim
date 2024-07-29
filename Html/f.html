@@ -23,8 +23,10 @@
 // img.classList.add("obj"), img.file = f;
 d.body.appendChild(img), reader = new FileReader()
 // , console.log(reader)
-reader.onload = (e) => { img.src = e.target.result; } // callback, thumbnail on the user's screen
-reader.readAsDataURL(f) // read operation in the background, asynchronously loading the image and
+// reader.onload = (e) => {
+  img.src = URL.createObjectURL(f)
+  // e.target.result; } // callback, thumbnail on the user's screen
+// reader.readAsDataURL(f) // read operation in the background, asynchronously loading the image and
 // attaching it to the img element.
 img.alt = f.name, img.height = scr.innerHeight/2 } } </script> </body> </html>
   
