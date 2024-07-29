@@ -7,7 +7,7 @@
 
     <body> <input type=file id=fileSelector>
 
-    <script> console.clear(), f = fileSelector.files[0]
+    <script> console.clear()
       // while (n < l) { .style.backgroundColor='#050', n+=1;}
       
       // function rcol(n, t1) { if(n%2){} else{}}
@@ -25,7 +25,7 @@
       // if(Math.min(s.width, s.height) <=480){
       // for(i=0; i< l; i++){ document.body.style.zoom = "80%"; a[i].href = d + a[i].href;
       //     a[i].textContent = a[i].href;  } l.replace(d+u); else{l.replace(u);}
-      fileSelector.onchange = () => { 
+      fileSelector.onchange = () => { f = fileSelector.files[0]
     document.body.innerHTML += `<p style='word-wrap: break-word;'> <a>${f.size}</a> <br><br>
         <a>${f.lastModified}</a> </p></div>`
         // alert(f.size)
