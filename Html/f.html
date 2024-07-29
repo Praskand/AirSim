@@ -26,8 +26,9 @@
       // for(i=0; i< l; i++){ document.body.style.zoom = "80%"; a[i].href = d + a[i].href;
       //     a[i].textContent = a[i].href;  } l.replace(d+u); else{l.replace(u);}
       fileSelector.onchange = () => { f = fileSelector.files[0]
+        s = f.size >= Math.pow(10, 7) ? {m: 'M', n: 6}: {m: 'K', n: 3}
     document.querySelector('p').innerHTML += `<a>Name: ${f.name}</a> <br> <br>
-      <a>~ ${Math.round(f.size/1000)} KB</a> <br> <br>
+      <a>~ ${Math.round(f.size/Math.pow(10, s.n))} ${s.m}B</a> <br> <br>
       <a>Last modified date: ${f.lastModifiedDate}</a>`
         // alert(f.size)
         } </script> </body> </html>
