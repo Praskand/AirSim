@@ -6,7 +6,7 @@
 
     <body> <input type=file id=fileSelector> <p style='word-wrap: break-word;'> </p>
 
-    <script> console.clear() // while (n < l) {} rcol(n, t1) {} l = t.length
+    <script> console.clear(), t = 1024 // while (n < l) {} rcol(n, t1) {} l = t.length
         // parseInt(t[n].children[c].innerHTML); console.log(num); .toString()
       // s = screen, m = 'https://Praskand.github.io/AirSim/',
       // d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
@@ -17,9 +17,9 @@
       // } l.replace(d+u) <a>Name: ${f.name}</a> <br> <br>
       
       fileSelector.onchange = () => { f = fileSelector.files[0]
-        s = f.size >= Math.pow(10, 7) ? {m: 'M', n: 6}: {m: 'K', n: 3}
+        s = f.size >= t ? {m: 'M', n: t}: {m: 'K', n: 1}
 
-    document.querySelector('p').innerHTML += `<a>~ ${Math.round(f.size/Math.pow(10, s.n))} ${s.m}B</a>
+    document.querySelector('p').innerHTML += `<a>~ ${Math.round(10*f.size/t/s.n)/10} ${s.m}B</a>
     <br> <br> <a>Last modified date: ${f.lastModifiedDate}</a>`
         // alert(f.size)
         } </script> </body> </html>
