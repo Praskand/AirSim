@@ -1,8 +1,7 @@
 <!DOCTYPE html> <html> <head> <link rel="icon" type="image/x-icon" href=
-    "https://avatars.githubusercontent.com/u/95966972?v=4"> <title>Tables</title>
+    "https://avatars.githubusercontent.com/u/95966972?v=4"> <title>File</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style> :root {color-scheme: dark;
-    } /* light or dark */ </style></head>
+    <style> :root {color-scheme: dark;} </style> </head>
 
     <body> <input type=file id=fileSelector> <p style='word-wrap: break-word;'> </p>
 
@@ -19,7 +18,7 @@
       fileSelector.onchange = () => { f = fileSelector.files[0]
         s = f.size >= t ? {m: 'M', n: 2}: {m: 'K', n: 1}
 
-    document.querySelector('p').innerHTML += `<a>~ ${Math.round(10*f.size/t**s.n)/10} ${s.m}B</a>
+    document.querySelector('p').innerHTML += `<a>~ ${(f.size/t**s.n).toFixed(1)} ${s.m}B</a>
     <br> <br> <a>Last modified date: ${f.lastModifiedDate}</a>`
         // alert(f.size)
         } </script> </body> </html>
