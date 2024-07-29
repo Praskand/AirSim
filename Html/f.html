@@ -1,16 +1,13 @@
 <!DOCTYPE html> <html> <head> <link rel="icon" type="image/x-icon" href=
-    "raw.githubusercontent.com/Praskand/AirSim/main/M.jpeg"> <title>File</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    "https://raw.githubusercontent.com/Praskand/AirSim/main/M.jpeg"> <!--  ! without https:// -->
+    <title>File</title> <meta name="viewport" content="width=device-width, initial-scale=1">
     <style> :root {color-scheme: dark;} </style> </head>
 
     <body> <input type=file id=fileSelector> <p style='word-wrap: break-word;'> </p>
 
-    <script> console.clear(), t = 1024, d = document, s = screen
+    <script> console.clear(), t = 1024, d = document, scr = screen
     // while (n < l) {} rcol(n, t1) {} l = t.length
-        // parseInt(t[n].children[c].innerHTML); console.log(num); .toString()
-      // s, m = 'https://Praskand.github.io/AirSim/',
-      // d = 'https://drive.google.com/viewerng/viewer?embedded=true&url=';
-      // ['AvailableChoicesN.pdf', 'N.pdf'];
+        // parseInt(); console.log(num); .toString() ['AvailableChoicesN.pdf', 'N.pdf'];
       // for(i=0; i< l; i++){ a[i].href = m + p[i]; a[i].textContent = a[i].href;}
       // if(Math.min(s.width, s.height) <=480){
       // for(i=0; i< l; i++){ d.body.style.zoom = "80%"; a[i].href = d + a[i].href;
@@ -25,6 +22,6 @@
     if (f.type.startsWith("image/")) { img = d.createElement("img");
 // img.classList.add("obj"), img.file = f;
 d.body.appendChild(img), reader = new FileReader(), reader.readAsDataURL(f), img.src = reader.result
-img.alt = f.name, img.height = s.availHeight/2 } }
+img.alt = f.name, img.height = scr.availHeight/2 } }
 </script> </body> </html>
   
