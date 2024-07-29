@@ -5,7 +5,7 @@
      /* --color: #333; */
     } /* light or dark */ </style></head>
 
-    <body> <input type=file id=fileSelector>
+    <body> <input type=file id=fileSelector> <p style='word-wrap: break-word;'> </p>
 
     <script> console.clear()
       // while (n < l) { .style.backgroundColor='#050', n+=1;}
@@ -26,10 +26,9 @@
       // for(i=0; i< l; i++){ document.body.style.zoom = "80%"; a[i].href = d + a[i].href;
       //     a[i].textContent = a[i].href;  } l.replace(d+u); else{l.replace(u);}
       fileSelector.onchange = () => { f = fileSelector.files[0]
-    document.body.innerHTML += `<p style='word-wrap: break-word;'>
-      <a>Name: ${Math.round(f.size/1000)} KB</a> <br> <br>
+    document.querySelector('p').innerHTML += `<a>Name: ${f.name}</a> <br> <br>
       <a>~ ${Math.round(f.size/1000)} KB</a> <br> <br>
-      <a>Last modified date: ${f.lastModifiedDate}</a> </p> </div>`
+      <a>Last modified date: ${f.lastModifiedDate}</a>`
         // alert(f.size)
         } </script> </body> </html>
   
