@@ -5,7 +5,7 @@
 
     <body> <input type=file id=fileSelector> <p style='word-wrap: break-word;'> </p>
 
-    <script> console.clear(), t = 1024, d = document, scr = screen
+    <script> console.clear(), t = 1024, d = document, scr = window
     // while (n < l) {} rcol(n, t1) {} l = t.length
         // parseInt();; .toString() ['AvailableChoicesN.pdf', 'N.pdf'];
       // for(i=0; i< l; i++){ a[i].href = m + p[i]; a[i].textContent = a[i].href;}
@@ -26,5 +26,5 @@ d.body.appendChild(img), reader = new FileReader()
 reader.onload = (e) => { img.src = e.target.result; } // callback, thumbnail on the user's screen
 reader.readAsDataURL(f) // read operation in the background, asynchronously loading the image and
 // attaching it to the img element.
-img.alt = f.name, img.height = scr.availHeight/2 } } </script> </body> </html>
+img.alt = f.name, img.height = scr.innerHeight/2 } } </script> </body> </html>
   
