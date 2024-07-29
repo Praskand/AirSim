@@ -17,9 +17,9 @@
       // } l.replace(d+u) <a>Name: ${f.name}</a> <br> <br>
       
       fileSelector.onchange = () => { f = fileSelector.files[0]
-        s = f.size >= t ? {m: 'M', n: t}: {m: 'K', n: 1}
+        s = f.size >= t ? {m: 'M', n: 2}: {m: 'K', n: 1}
 
-    document.querySelector('p').innerHTML += `<a>~ ${Math.round(10*f.size/t/s.n)/10} ${s.m}B</a>
+    document.querySelector('p').innerHTML += `<a>~ ${Math.round(10*f.size/t**s.n)/10} ${s.m}B</a>
     <br> <br> <a>Last modified date: ${f.lastModifiedDate}</a>`
         // alert(f.size)
         } </script> </body> </html>
