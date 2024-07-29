@@ -14,7 +14,7 @@
       // } l.replace(d+u) <a>Name: ${f.name}</a> <br> <br>
       
       fileSelector.onchange = () => { f = fileSelector.files[0]
-        s = f.size >= t ? {m: 'M', n: 2}: {m: 'K', n: 1}
+        s = f.size >= t**2 ? {m: 'M', n: 2}: {m: 'K', n: 1}
 
     d.querySelector('p').innerHTML += `<a>~ ${(f.size/t**s.n).toFixed(1)} ${s.m}B</a>
     <br> <br> <a>Last modified date: ${f.lastModifiedDate}</a>` // alert(f.size)
