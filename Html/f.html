@@ -10,14 +10,15 @@
         // parseInt(); .toString() ['AvailableChoicesN.pdf', 'N.pdf'];
       // for(i=0; i< l; i++){ a[i].href = m + p[i]; a[i].textContent = a[i].href;}
       // if(Math.min(s.width, s.height) <=480){
-      // for(i=0; i< l; i++){ d.body.style.zoom = "80%"; a[i].href = d + a[i].href;
+      // for(i=0; i< l; i++){ d.body.style.zoom = "80%"
       // } l.replace(d+u) <a>Name: ${f.name}</a> <br> <br>
       
       fileSelector.onchange = () => { f = fileSelector.files[0]
-        s = f.size >= t**2 ? {m: 'M', n: 2}: {m: 'K', n: 1}
+        s = f.size >= t**2 ? {m: 'M', n: 2}: {m: 'K', n: 1}, l = f.lastModifiedDate
+        g = l.getHours(), k = g >= 12 ? {h:g - 12, a:'P'} : {h:g, a:'A'}
 
-    d.querySelector('p').innerHTML += `<a>~ ${(f.size/t**s.n).toFixed(1)} ${s.m}B</a>
-    <br> <br> <a>Last modified date: ${f.lastModifiedDate}</a>` // alert(f.size)
+    d.querySelector('p').innerHTML += `<a>~ ${(f.size/t**s.n).toFixed(1)} ${s.m}B</a> <br> <br>
+    <a>Last modified date: ${l.setHours(k.h)} ${k.a}M</a>` // alert(f.size)
 
     if (f.type.startsWith("image/")) { img = d.createElement("img");
 // img.classList.add("obj"), img.file = f;
