@@ -32,6 +32,5 @@ img.alt = f.name, img.height = scr.innerHeight/2 }
 
   t = f.type.split('/'); if (t[0] === 'video') {
     if (t[1].endsWith('wmv')) { i = d.createElement('a')
-  i.innerHTML = '! wmv file not supported.', d.body.appendChild(i) } else ivb(t[0]) }
-  else if (t[0] === 'image') ivb('img') } </script>
-  </body> </html>
+  i.innerHTML = '<font color="orange">!</font> wmv file not supported.', d.body.appendChild(i) }
+else ivb(t[0]) } else if (t[0] === 'image') ivb('img') } </script> </body> </html>
