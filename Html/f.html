@@ -17,11 +17,10 @@
 d.body.appendChild(img), reader = new FileReader()
 // , console.log(reader)
 // reader.onload = (e) => {
-  img.src = URL.createObjectURL(f)
   // e.target.result; } // callback, thumbnail on the user's screen
 // reader.readAsDataURL(f) // read operation in the background, asynchronously loading the image and
 // attaching it to the img element.
-img.alt = f.name, img.height = scr.innerHeight/2 }
+img.alt = f.name, img.height = scr.innerHeight/2, img.src = URL.createObjectURL(f) }
 
   fileSelector.onchange = () => { f = fileSelector.files[0]
     s = f.size >= t**2 ? {m: 'M', n: 2}: {m: 'K', n: 1}, l = f.lastModifiedDate
