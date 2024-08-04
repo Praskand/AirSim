@@ -9,18 +9,16 @@
     <script> console.clear(), t = 1024, d = document, scr = window
     // while (n < l) {} .length parseInt(); .toString() ['AvailableChoicesN.pdf', 'N.pdf'];
       // for(i=0; i< l; i++){ a[i].href = m + p[i]; a[i].textContent = a[i].href;}
-      // if(Math.min(s.width, s.height) <=480){ d.body.style.zoom = "80%"
-      // } l.replace(d+u) <a>Name: ${f.name}</a> <br> <br>
+      // d.body.style.zoom = "80%" l.replace(d+u) <a>Name: ${f.name}</a> <br> <br>
 
     ivb = (e) => { img = d.createElement(e)
 // img.classList.add("obj"), img.file = f
 d.body.appendChild(img), reader = new FileReader()
 // , console.log(reader)
-// reader.onload = (e) => {
-  // e.target.result; } // callback, thumbnail on the user's screen
-// reader.readAsDataURL(f) // read operation in the background, asynchronously loading the image and
-// attaching it to the img element.
 img.alt = f.name, img.height = scr.innerHeight/2, img.src = URL.createObjectURL(f) }
+
+ade = (o, c, a) => { i = d.createElement('a')
+  i.innerHTML = `<font color="${o}">${c}</font> ${a}`, d.body.appendChild(i) }
 
   fileSelector.onchange = () => { f = fileSelector.files[0]
     s = f.size >= t**2 ? {m: 'M', n: 2}: {m: 'K', n: 1}, l = f.lastModifiedDate
@@ -30,6 +28,7 @@ img.alt = f.name, img.height = scr.innerHeight/2, img.src = URL.createObjectURL(
   <a><font color="red">Last modified date:</font>&nbsp${new Date(l.setHours(k.h))} ${k.a}M</a>`
 
   t = f.type.split('/'); if (t[0] === 'video') {
-    if (t[1].endsWith('wmv')) { i = d.createElement('a')
-  i.innerHTML = '<font color="orange">!</font> wmv file not supported.', d.body.appendChild(i) }
-else ivb(t[0]), img.setAttribute("controls", '') } else if (t[0] === 'image') ivb('img') } </script> </body> </html>
+      if (t[1].endsWith('wmv')) { ade('orange', '!', 'wmv file not supported.') } else ivb(t[0])
+      img.setAttribute("controls", '')
+    if(Math.min(scr.width, scr.height) <=480) { ade('red', 'Duration:', img.duration) } }
+    else if (t[0] === 'image') ivb('img') } </script> </body> </html>
