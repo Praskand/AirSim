@@ -7,8 +7,8 @@
     <body> <input type=file id=fileSelector> <p style='word-wrap: break-word;'> </p>
 
     <script> console.clear(), t = 1024, d = document, scr = window
-    // while (n < l) {} .length parseInt(); .toString() ['AvailableChoicesN.pdf', 'N.pdf'];
-      // for(i=0; i< l; i++){ a[i].href = m + p[i]; a[i].textContent = a[i].href;}
+    // while (n < l) {} .length parseInt(); .toString() ['AvailableChoicesN.pdf', 'N.pdf']
+      // for(i=0; i< l; i++){ a[i].href = m + p[i]; a[i].textContent = a[i].href}
       // d.body.style.zoom = "80%" l.replace(d+u) <a>Name: ${f.name}</a> <br> <br>
 
     ivb = (e) => { img = d.createElement(e)
@@ -30,5 +30,5 @@ ade = (o, c, a) => { i = d.createElement('a')
   t = f.type.split('/'); if (t[0] === 'video') {
       if (t[1].endsWith('wmv')) { ade('orange', '!', 'wmv file not supported.') } else ivb(t[0])
       img.setAttribute("controls", '')
-    if(Math.min(scr.width, scr.height) <=480) { ade('red', 'Duration:', img.duration) } }
+    if(Math.min(scr.innerWidth, scr.innerHeight) <=480) { ade('red', 'Duration:', img.duration) } }
     else if (t[0] === 'image') ivb('img') } </script> </body> </html>
